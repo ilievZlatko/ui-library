@@ -1,0 +1,48 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-thumbnail {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .lp-thumbnail-details {
+    display: grid;
+    grid-template-areas: "title actions" "subtitle subtitle";
+    grid-template-rows: 1fr min-content;
+    column-gap: $spacing-small;
+    align-items: center;
+    overflow: hidden;
+    margin: $spacing-large 0 $spacing-large $spacing-large;
+
+    .lp-thumbnail-title {
+      grid-area: title;
+      @include textRegular();
+    }
+
+    .lp-thumbnail-actions {
+      grid-area: actions;
+    }
+
+    .lp-thumbnail-subtitle {
+      grid-area: subtitle;
+      @include textExplanatory();
+      color: $color-dark30;
+      margin-top: $spacing-small;
+    }
+  }
+}
+
+.lp-thumbnail-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: $radius-medium;
+  will-change: background-color, color;
+  @include transitionAppearance(color, background-color);
+}
+
+@media screen and (max-height: 900px) {
+  .lp-thumbnail .lp-thumbnail-details {
+    margin: $spacing-regular 0 $spacing-regular $spacing-large;
+  }
+}

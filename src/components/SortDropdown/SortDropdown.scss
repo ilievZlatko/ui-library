@@ -1,0 +1,15 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-sort-dropdown > .lp-btn-content > .lp-icon {
+  color: $color-dark30;
+}
+
+.sort-dropdown-radio {
+  margin-right: $spacing-regular;
+}
+
+.sort-dropdown-option {
+  display: flex;
+  padding: $spacing-regular $spacing-large;
+}
+

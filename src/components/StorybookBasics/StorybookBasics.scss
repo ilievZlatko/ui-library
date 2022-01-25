@@ -1,0 +1,213 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-storybook-basics {
+  margin:  $spacing-4xlarge;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: $spacing-large;
+
+    &:not(:first-child) {
+      margin-top: $spacing-xlarge;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-large;
+    grid-template-columns: 100px 200px 300px;
+
+    &.typography {
+      grid-template-columns: 500px 300px;
+    }
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-regular;
+  }
+  .highlight {
+    background-color: tint($color-red, 80%);
+    width: fit-content;
+    margin-left: 40px;
+  }
+  .spacing {
+    height: 20px;
+    width: 40px;
+    background-color: $color-white;
+    border: 1px solid $color-dark70;
+
+    &.xs {
+      margin: $spacing-xsmall;
+    }
+
+    &.small {
+      margin: $spacing-small;
+    }
+
+    &.regular {
+      margin: $spacing-regular;
+    }
+
+    &.medium {
+      margin: $spacing-medium;
+    }
+
+    &.large {
+      margin: $spacing-large;
+    }
+
+    &.xlarge {
+      margin: $spacing-xlarge;
+    }
+
+    &.xxlarge {
+      margin: $spacing-xxlarge;
+    }
+
+    &.xxxlarge {
+      margin: $spacing-xxxlarge;
+    }
+
+    &.four-xlarge {
+      margin: $spacing-4xlarge;
+    }
+
+    &.five-xlarge {
+      margin: $spacing-5xlarge;
+    }
+  }
+
+  .size {
+    width: 120px;
+    background-color: $color-white;
+    border: 1px solid $color-dark70;
+
+    &.item-medium {
+      height: $size-item-medium;
+    }
+
+    &.item-regular {
+      height: $size-item-regular;
+    }
+
+    &.item-large {
+      height: $size-item-large;
+    }
+
+    &.item-xlarge {
+      height: $size-item-xlarge;
+    }
+  }
+
+  .radius {
+    width: $size-item-regular;
+    height: $size-item-regular;
+    background-color: $color-white;
+    border: 1px solid $color-dark70;
+
+    &.small {
+      border-radius: $radius-small;
+    }
+
+    &.regular {
+      border-radius: $radius-regular;
+    }
+
+    &.medium {
+      border-radius: $radius-medium;
+    }
+
+    &.circle {
+      border-radius: $radius-circle;
+    }
+  }
+
+  .font {
+    margin-left: 40px;
+
+    &.heading {
+      @include textHeading();
+    }
+
+    &.titleBold {
+      @include textTitleBold();
+    }
+
+    &.title {
+      @include textTitle();
+    }
+
+    &.bold {
+      @include textBold();
+    }
+
+    &.regular {
+      @include textRegular();
+    }
+
+    &.explanatory {
+      @include textExplanatory();
+    }
+
+    &.titleUppercase {
+      @include textTitleUppercase();
+    }
+
+    &.medium {
+      @include textMedium();
+    }
+
+    &.large {
+      @include textLarge();
+    }
+  }
+
+  .color {
+    height: 20px;
+    width: 40px;
+    border: 1px solid $color-dark70;
+    margin-left: 40px;
+    border-radius: $radius-regular;
+
+    &.blue {
+      background-color: $color-blue;
+    }
+
+    &.green {
+      background-color: $color-green;
+    }
+
+    &.yellow {
+      background-color: $color-yellow;
+    }
+
+    &.orange {
+      background-color: $color-orange;
+    }
+
+    &.red {
+      background-color: $color-red;
+    }
+
+    &.dark90 {
+      background-color: $color-dark90;
+    }
+    &.dark70 {
+      background-color: $color-dark70;
+    }
+    &.dark30 {
+      background-color: $color-dark30;
+    }
+    &.light10 {
+      background-color: $color-light10;
+    }
+    &.light02 {
+      background-color: $color-light02;
+    }
+    &.white {
+      background-color: $color-white;
+    }
+  }
+}

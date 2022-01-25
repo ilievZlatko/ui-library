@@ -1,0 +1,47 @@
+@import '../../../styles/variables';
+
+.feedback-button {
+  display: flex;
+  height: 28px;
+  width: 100%;
+  border: 1px solid transparent;
+  margin-top: 12px;
+  justify-content: center;
+  border-radius: $radius-regular;
+  background-color: $color-white;
+  padding: 1px 7px 2px;
+
+  user-select: none;
+  text-decoration: none !important;
+  color: $color-white;
+
+  @include transitionAppearance(background-color, border-color, box-shadow);
+
+  &.half-width {
+    width: calc(#{50%} - #{4px});;
+    display: inline-flex;
+    align-items: center;
+
+    &:first-child {
+      margin-right: 8px;
+    }
+  }
+
+  &.secondary {
+    background-color: transparent;
+    border-color: $color-white !important;
+    .text {
+      color: $color-white !important;
+    }
+  }
+
+  &:active {
+    background-color: $color-dark30;
+    border-color: $color-dark30;
+
+    &.secondary {
+      background-color: $color-light10;
+      border-color: $color-light10;
+    }
+  }
+}

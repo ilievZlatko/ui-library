@@ -1,0 +1,13 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-loading-spinner {
+  flex-shrink: 0;
+  
+  &.regular {
+    @include spinner();    
+  }
+
+  &.small {
+    @include spinner($size: 20px, $border-width: 2px);
+  }
+}

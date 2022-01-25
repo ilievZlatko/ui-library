@@ -1,0 +1,98 @@
+@import '../../styles/variables';
+
+.lp-metric-tile {
+  background: $color-white;
+  padding: $spacing-xlarge;
+  min-width: 300px;
+  position: relative;
+
+  &.clickable {
+    @include transitionVisibility(box-shadow, border-color, transform);
+    box-shadow: none;
+    cursor: pointer;
+    transform: scale(1);
+
+    &:hover {
+      @include hoverShadow();
+      border-color: #00000000;
+      border-radius: $radius-medium;
+      z-index: 1;
+      transform: scale(1.02);
+
+      + .lp-metric-tile {
+        border-color: #00000000;
+      }
+    }
+  }
+
+  &.loading > .tile-content > .tile-info > .tile-value {
+    @include loadingPlaceholder();
+  }
+
+  > .tile-content {
+    display: flex;
+  }
+
+  .tile-info {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: auto;
+    flex: 1;
+
+    > .tile-title {
+      @include textRegular();
+      height: $font-small-line-height;
+      color: $color-dark70;
+      display: flex;
+      align-items: center;
+
+      .lp-icon {
+        color: $color-dark30;
+        margin-left: $spacing-regular;
+      }
+    }
+
+    > .tile-value {
+      &.regular {
+        @include textHeading();
+      }
+
+      &.medium {
+        @include textMedium();
+      }
+
+      &.large {
+        @include textLarge();
+      }
+
+      > .tile-total {
+        @include textRegular();
+        color: $color-dark30;
+        margin-left: $spacing-small;
+      }
+
+      > .value-subtext {
+        @include textExplanatory();
+        color: $color-dark30;
+      }
+
+      > .value-hint-icon {
+        background-color: $color-dark90;
+        border-radius: 50%;
+        color: $color-white;
+        display: inline-flex;
+        margin-left: $spacing-regular;
+      }
+    }
+  }
+
+  .disabled-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color-white;
+    opacity: 0.8;
+  }
+}

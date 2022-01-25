@@ -1,0 +1,232 @@
+@import '../../styles/variables';
+
+.lp-color-picker-input {
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+
+  > .control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    > .color-preview {
+      width: 30px;
+      height: 30px;
+      border: 1px solid $gray-light;
+      background-color: $color-white;
+
+      > .value {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    > .value-str {
+      flex: 1;
+      line-height: 40px;
+      margin: 0;
+      padding: 0 8px;
+    }
+  }
+
+  > .clear {
+    cursor: pointer;
+    flex-grow: 0;
+    font-size: 21px;
+    line-height: 18px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+
+    &.v-leave-to {
+      opacity: 0;
+    }
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &.disabled {
+    > .control {
+      cursor: default;
+
+      > .color-preview {
+        border-color: $white-darker;
+      }
+      > .value-str {
+        color: $color-dark30;
+      }
+    }
+  }
+
+  &.readonly {
+    > .control {
+      cursor: default;
+
+      > .color-preview {
+        border-color: $white-darker;
+      }
+      > .value-str {
+        color: $color-dark70;
+      }
+    }
+  }
+
+  &.new-ux {
+    @include transitionAppearance(border-color, background-color, width);
+
+    align-items: center;
+    background-color: $color-light02;
+    border-radius: $radius-regular;
+    border: 1px solid $color-light02;
+    color: $color-dark70;
+    display: flex;
+    font-size: $font-regular;
+    height: $size-item-regular;
+    line-height: $font-regular-line-height;
+    padding: $spacing-small;
+    position: relative;
+
+    &:active, &:disabled {
+      outline: 0;
+    }
+
+    &:focus-within {
+      background-color: $color-white;
+      border-color: $color-primary;
+    }
+
+    &.disabled {
+      background-color: $color-light02;
+      border-color: $color-light02;
+      color: $color-dark30;
+      cursor: default;
+    }
+
+    &:not(.disabled) {
+      &:hover:not(:focus-within),
+      &.readonly > input:focus, &.readonly:focus-within, &.readonly.active {
+        background-color: $color-light10;
+        border-color: $color-light10;
+
+        > .control > .thumb {
+          background-color: $color-dark30;
+          border-color: $color-dark30;
+
+          &::before {
+            color: $color-dark70;
+          }
+        }
+      }
+
+      &:focus-within {
+        color: $color-dark90;
+        outline: 0;
+      }
+    }
+
+    > .control {
+      > .color-preview {
+        border: 1px solid $color-light10;
+        border-radius: $radius-small;
+        height: 28px;
+        overflow: hidden;
+        padding: 0;
+        width: 28px;
+      }
+    }
+  }
+}
+
+.lp-color-picker-legend {
+   cursor: pointer;
+
+  .lp-color-picker-input {
+    flex: 1;
+    padding: 0;
+
+    > .control {
+      > .color-preview {
+        width: 26px;
+        height: 26px;
+      }
+
+      > .value-str {
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.lp-color-picker-modal {
+  > .wrapper {
+    > .content {
+      > .body {
+        display: flex;
+
+        .color-slider-container {
+          > .bg-hue {
+            display: flex;
+
+            > .bg-container {
+              position: relative;
+
+              > .bg-main {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &.saturation {
+                  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 0, 0));
+                }
+
+                &.brightness {
+                  background: linear-gradient(rgba(255,255,255,0), #000);
+                }
+              }
+
+              > .bg-slider {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                cursor: pointer;
+                width: 4px;
+                height: 4px;
+                box-shadow: 0 0 0 1.5px #FFFFFF, inset 0 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 1px 2px rgba(0, 0, 0, 0.4);
+                border-radius: 100%;
+                transform: translate(-2px,-2px);
+              }
+            }
+          }
+        }
+
+        > .input {
+          margin-left: 12px;
+
+          > label {
+            display: block;
+            line-height: 24px;
+            font-family: $font-family-circular-medium;
+          }
+
+          > input {
+            width: 200px;
+          }
+        }
+      }
+
+      > .footer {
+        display: flex;
+
+        > .close {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

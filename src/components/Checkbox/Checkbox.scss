@@ -1,0 +1,101 @@
+@import '../../styles/variables';
+
+.lp-checkbox {
+  $size: 16px;
+
+  display: flex;
+
+  > .container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    &:not(.disabled) {
+      .real-input, .fake-input {
+        cursor: pointer;
+      }
+    }
+
+    > .fake-input {
+      align-self: flex-start;
+      margin-top: ($spacing-xlarge - $size) / 2;
+      display: block;
+      width: $size;
+      height: $size;
+      border-radius: $radius-regular;
+      background-color: transparent;
+      position: relative;
+      @include transitionAppearance(background-color, border-color);
+
+      > .real-input {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+      }
+
+      > .check-icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $color-white;
+
+        .fade-enter-active,
+        .fade-leave-active {
+          @include transitionAppearance(opacity);
+        }
+        .fade-enter,
+        .fade-leave-active {
+          opacity: 0;
+        }
+      }
+    }
+
+    > .text {
+      flex: 1;
+      margin-left: 8px;
+      line-height: $spacing-xlarge;
+      color: $color-dark70;
+    }
+
+
+    &.checked,
+    &.indeterminate {
+      > .fake-input {
+        background-color: $color-primary;
+      }
+    }
+
+    &.unchecked {
+      > .fake-input {
+        border: 1px solid $color-dark30;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: .5;
+    }
+
+    &:hover:not(.disabled), &:active {
+      > .text {
+        color: $color-dark90;
+      }
+
+      &.checked, &.indeterminate {
+        > .fake-input {
+          background-color: $color-primary-hover;
+        }
+      }
+
+      &.unchecked {
+        > .fake-input {
+          border-color: shade($color-dark30, 25%);
+        }
+      }
+    }
+  }
+}

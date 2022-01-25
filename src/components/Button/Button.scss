@@ -1,0 +1,279 @@
+@import '../../styles/variables';
+
+@mixin colors($color, $background-color, $border-color, $shadow: none) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+  box-shadow: $shadow;
+};
+
+// Add new button colors here.
+$color-map: (
+  'primary': $color-primary,
+  'success': $color-green,
+  'warning': $color-yellow,
+  'danger': $color-red,
+);
+
+.lp-button {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  opacity: 1;
+  outline: none;
+  overflow: hidden;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  will-change: '';
+  word-spacing: normal;
+
+  font-family: $font-family-circular-bold;
+  font-size: $font-regular;
+  font-style: normal;
+  font-weight: 400;
+
+  height: $size-item-regular;
+  border-radius: $radius-regular;
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  color: $color-dark70;
+
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: normal;
+
+  @include transitionAppearance(background-color, border-color, box-shadow);
+
+  &.outline {
+    font-family: $font-family-circular-book;
+  }
+
+  &.inline {
+    text-align: left;
+    font-weight: 400;
+    font-family: $font-family-circular-book; // TODO: don't be a hacker (Denis)
+  }
+
+  &.with-indicator {
+    overflow: visible;
+  }
+
+  &[disabled]:not(.loading) {
+    cursor: default;
+  }
+
+  &.color-light {
+    &.enabled {
+      // No specific styling for LIGHTEN mode.
+      &.normal, &.lighten {
+        @include colors($color-dark70, $color-light02, $color-light02);
+        &:hover, &:focus {
+          @include colors($color-dark90, $color-light10, $color-light10);
+        }
+        &:active {
+          @include colors($color-dark90, $color-dark30, $color-dark30);
+        }
+      }
+
+      &.outline {
+        @include colors($color-dark70, $color-light02, $color-light10);
+        &:hover, &:focus {
+          @include colors($color-dark90, $color-light10, $color-light10);
+        }
+        &:active {
+          @include colors($color-dark90, $color-dark30, $color-dark30);
+        }
+      }
+    }
+
+    &[disabled]:not(.loading) {
+      &.normal, &.lighten {
+        @include colors($color-dark30, $color-light02, $color-light02);
+      }
+
+      &.outline {
+        @include colors($color-dark30, $color-light02, $color-light10);
+      }
+    }
+  }
+
+  &.color-transparent {
+    background-color: transparent;
+    border-color: transparent;
+
+    &.enabled {
+      color: $color-dark70;
+
+      &:hover, &:focus, &:active {
+        color: $color-dark90;
+      }
+    }
+
+    &[disabled]:not(.loading) {
+      color: $color-dark30;
+    }
+  }
+
+  @each $color-name, $color in $color-map {
+    &.color-#{$color-name} {
+      &.enabled {
+
+        &.normal {
+          @include colors($color-white, $color, $color);
+          &:hover, &:focus {
+            @include colors($color-white, $color, $color, 0 4px 10px 0 rgba($color, 0.5));
+          }
+          &:active {
+            @include colors($color-white, shade($color, 20%), shade($color, 20%));
+          }
+        }
+
+        &.outline {
+          @include colors($color, transparent, $color);
+          &:hover, &:focus {
+            @include colors($color, tint($color, 85%), $color);
+          }
+          &:active {
+            @include colors($color-white, $color, $color);
+          }
+        }
+
+        &.lighten {
+          @include colors($color, tint($color, 90%), tint($color, 90%));
+          &:hover, &:focus {
+            @include colors($color, tint($color, 80%), tint($color, 80%));
+          }
+          &:active {
+            @include colors($color-white, $color, $color);
+          }
+        }
+      }
+
+      &[disabled]:not(.loading) {
+        &.normal {
+          @include colors($color-white, tint($color, 70%), tint($color, 70%));
+        }
+        &.outline {
+          @include colors(tint($color, 70%), $color-white, tint($color, 70%));
+        }
+        &.lighten {
+          @include colors(tint($color, 60%), tint($color, 95%), transparent);
+        }
+      }
+    }
+  }
+
+  &.icon-only {
+    width: $size-item-regular;
+    padding: 0;
+
+    .lp-btn-content {
+      > .icon {
+        margin: 0;
+      }
+    }
+  }
+
+  &.loading {
+    .lp-btn-content {
+      visibility: hidden;
+    }
+
+    .loading-spinner {
+      position: absolute;
+      top: calc(50% - 12px);
+      left: calc(50% - 12px);
+      @include spinner($size: 24px, $color: currentColor);
+    }
+  }
+}
+
+.lp-btn-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  &.reverse {
+    > .icon {
+      margin: 0 0 0 $spacing-regular;
+    }
+  }
+
+  > .icon {
+    display: block;
+    color: inherit;
+    padding: 0;
+    margin: 0 $spacing-regular 0 0;
+
+    svg {
+      display: block;
+      @include transitionAppearance(color);
+    }
+  }
+
+  > .text {
+    display: block;
+    flex: 1;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include transitionAppearance(color);
+  }
+
+  > .icon {
+    cursor: inherit;
+  }
+
+  > .badge {
+    margin-right: $spacing-regular;
+  }
+
+  > .btn-dot-indicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    border-radius: $radius-circle;
+    border: 2px solid $color-white;
+
+    @each $color-name, $color in $color-map {
+      &.indicator-#{$color-name} {
+        background-color: $color;
+      }
+    }
+  }
+
+  > .btn-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+
+  // ref: https://stackoverflow.com/a/23860302
+  > .btn-file-input, /* FF, IE7+, Chrome (except button) */
+  > .btn-file-input::-webkit-file-upload-button { /* Chrome/Blink button */
+      cursor: pointer;
+  }
+}
+
+a.lp-button[type="button"],
+a.lp-button[type="submit"] {
+  -webkit-appearance: unset;
+}

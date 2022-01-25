@@ -1,0 +1,21 @@
+$icon-size: 20px;
+$icon-half-size: $icon-size / 2;
+
+.lp-notification-tooltip {
+  &.absolute {
+    position: absolute;
+    right: -$icon-half-size;
+    top: 50%;
+    margin-top: -$icon-half-size;
+    z-index: 1; // Make sure the part that is outside the parent element is on top.
+
+  }
+
+  .lp-notification-tooltip-icon {
+    box-sizing: content-box;
+  }
+
+  .lp-notification-tooltip-content {
+    min-width: 180px;
+  }
+}

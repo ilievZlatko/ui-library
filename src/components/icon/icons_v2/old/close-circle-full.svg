@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>CloseTooltip</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="CloseTooltip" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tooltip-hover">
+            <rect id="Rectangle-249" fill="currentColor" transform="translate(8.000000, 8.000000) scale(1, -1) translate(-8.000000, -8.000000) " x="0" y="0" width="16" height="16" rx="8"></rect>
+            <polygon id="+" stroke="#FFFFFF" stroke-width="0.8" fill="#FFFFFF" transform="translate(8.000000, 8.000000) rotate(-315.000000) translate(-8.000000, -8.000000) " points="4 7.6984127 7.6984127 7.6984127 7.6984127 4 8.3015873 4 8.3015873 7.6984127 12 7.6984127 12 8.3015873 8.3015873 8.3015873 8.3015873 12 7.6984127 12 7.6984127 8.3015873 4 8.3015873"></polygon>
+        </g>
+    </g>
+</svg>

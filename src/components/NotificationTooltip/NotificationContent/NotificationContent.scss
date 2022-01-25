@@ -1,0 +1,10 @@
+@import '../../../styles/variables.scss';
+
+.notification-content-list {
+  margin-top: 0;
+}
+
+.lp-notification-content-message {
+  word-break: break-word;
+  white-space: pre-line;
+}

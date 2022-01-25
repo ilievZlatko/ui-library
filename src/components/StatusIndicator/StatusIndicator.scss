@@ -1,0 +1,21 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-status-indicator {
+  display: flex;
+  align-items: center;
+  border-radius: $radius-regular;
+  @include textTitleUppercase();
+  color: $color-dark30;
+  font-family: $font-family-circular-bold;
+
+  &:not(.embedded) {
+    padding: $spacing-small $spacing-regular;
+    background-color: $color-light02;
+  }
+
+  .status-icon {
+    margin-right: $spacing-regular;
+    cursor: default;
+    color: var(--status-color, $color-primary);
+  }
+}

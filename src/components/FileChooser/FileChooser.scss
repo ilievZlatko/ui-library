@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.lp-file-chooser {
+  align-items: center;
+  display: flex;
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  > .file-input-content {
+    flex: 1 1 auto;
+    margin-right: $spacing-xlarge;
+    overflow: hidden;
+  }
+
+  > .file-input-button {
+    overflow: hidden;
+    position: relative;
+  }
+
+  > .file-input-clear {
+    margin-left: $spacing-regular;
+  }
+}

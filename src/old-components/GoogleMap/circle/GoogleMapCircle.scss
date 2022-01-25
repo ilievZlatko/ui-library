@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.google-map-circle-toolbar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+
+  > .control {
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

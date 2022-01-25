@@ -1,0 +1,177 @@
+// TODO(gyoshev): such vars should probably be shared in variables.scss
+$bold-font-family: 'circular-book-bold', Verdana, Tahoma, sans-serif;
+
+$hint-bg-color-normal: #191919;
+$hint-fg-color-normal: #F6F9FB;
+$hint-bg-color-error: #FC2F49;
+$hint-fg-color-error: #F3F2F2;
+$hint-bg-color-warning: #FFDD0F;
+$hint-fg-color-warning: #4A4C4C;
+
+$hint-offset: 8px;
+$page-margin: 16px;
+
+.lp-hint-activator {
+  display: inline-block;
+  overflow: visible;
+  position: relative;
+}
+
+.lp-hint {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+  min-width: 240px;
+  padding: 12px 16px;
+  position: absolute;
+  z-index: 1000;
+
+  &.lp-hint--has-activator::before {
+    border: 10px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &.lp-hint--has-close {
+    padding-right: 40px;
+  }
+}
+
+.lp-hint--normal {
+  background: $hint-bg-color-normal;
+  color: $hint-fg-color-normal;
+
+  &.lp-hint--has-activator::before {
+    border-color: $hint-bg-color-normal;
+  }
+}
+
+.lp-hint--error {
+  background: $hint-bg-color-error;
+  color: $hint-fg-color-error;
+
+  &.lp-hint--has-activator::before {
+    border-color: $hint-bg-color-error;
+  }
+}
+
+.lp-hint--warning {
+  background: $hint-bg-color-warning;
+  color: $hint-fg-color-warning;
+
+  &.lp-hint--has-activator::before {
+    border-color: $hint-bg-color-warning;
+  }
+}
+
+.lp-hint--bottom {
+  bottom: $page-margin;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &.lp-hint--has-activator {
+    bottom: -$hint-offset;
+    transform: translate(-50%, 100%);
+
+    &::before {
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top: 0;
+      left: 50%;
+      top: -$hint-offset;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.lp-hint--left {
+  left: $page-margin;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.lp-hint--has-activator {
+    left: -$hint-offset;
+    transform: translate(-100%, -50%);
+
+    &::before {
+      border-bottom-color: transparent;
+      border-right: 0;
+      border-top-color: transparent;
+      right: -$hint-offset;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.lp-hint--right {
+  right: $page-margin;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.lp-hint--has-activator {
+    right: -$hint-offset;
+    transform: translate(100%, -50%);
+
+    &::before {
+      border-bottom-color: transparent;
+      border-left: 0;
+      border-top-color: transparent;
+      left: -$hint-offset;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.lp-hint--top {
+  left: 50%;
+  top: $page-margin;
+  transform: translateX(-50%);
+
+  &.lp-hint--has-activator {
+    top: -$hint-offset;
+    transform: translate(-50%, -100%);
+
+    &::before {
+      border-bottom: 0;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      bottom: -$hint-offset;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.lp-hint-title {
+  font-family: $bold-font-family;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.lp-hint-close {
+  background: transparent;
+  border-radius: 50%;
+  border: 0;
+  color: currentColor;
+  display: inline-block;
+  font-family: Arial, sans-serif; // the main font has offseted &times;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 8px;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,102 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+$max-page-width: 1600px;
+$min-page-width: 900px;
+
+.page-container {
+  display: flex;
+  background-color: $color-light02;
+  flex-direction: column;
+  @include verticalOverlay();
+  overflow-x: hidden;
+
+  &.fullscreen {
+    .page-content {
+      height: 100%
+    }
+  }
+
+  &:not(.scrollable) {
+    max-height: 100vh;
+    height: 100%;
+
+    .page-content {
+      overflow: hidden;
+    }
+  }
+
+  .header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    @include transitionAppearance(background-color, border-color);
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    padding: $spacing-xxxlarge 0;
+
+    &.scrolled {
+      background-color: $color-white;
+      border-color: $color-light10;
+    }
+
+    .header-content {
+      display: flex;
+      flex-flow: column nowrap;
+      min-width: $min-page-width;
+      max-width: $max-page-width;
+      margin: 0 auto;
+      padding: 0 $spacing-xxxlarge;
+
+      > .header-main-row {
+        display: flex;
+        align-items: center;
+        color: $color-dark90;
+        min-height: $size-item-regular;
+
+        > .header-back-button {
+          flex-shrink: 0;
+        }
+
+        > .page-title {
+          @include textHeading();
+        }
+
+        > .info-panel {
+          margin-left: auto;
+          flex-shrink: 1;
+          line-height: $font-xlarge-line-height;
+        }
+
+        > .page-actions {
+          align-items: center;
+          display: flex;
+          flex-shrink: 0;
+
+          &.with-left-margin {
+            margin-left: auto;
+          }
+
+          > * {
+            margin-left: $spacing-regular;
+          }
+        }
+      }
+
+      > .page-subtitle {
+        @include textRegular();
+        color: $color-dark30;
+      }
+    }
+  }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    min-width: $min-page-width;
+    max-width: $max-page-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $spacing-xxxlarge $spacing-xxxlarge $spacing-xxxlarge;
+    align-self: center;
+  }
+}

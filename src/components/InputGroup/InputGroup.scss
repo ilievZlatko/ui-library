@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.lp-input-group {
+  display: flex;
+
+  > :not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: $spacing-xsmall;
+  }
+
+  > :not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

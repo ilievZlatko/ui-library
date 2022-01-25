@@ -1,0 +1,143 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-split-layout {
+  display: flex;
+  flex-direction: row;
+  border-radius: $radius-regular;
+  @include dropdownShadow();
+  position: relative;
+  overflow: hidden;
+
+  .lp-split-pane-separator {
+    $proximity-threshold: 8px;
+
+    height: 100%;
+    width: 2 * $proximity-threshold + 1px;
+    z-index: 2;
+    position: absolute;
+    left: -1 * $proximity-threshold;
+    padding: 0 $proximity-threshold;
+    cursor: col-resize;
+
+    &.disabled {
+      cursor: default;
+
+      &:hover::after {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      .lp-resize-indicator .lp-resize-indicator-bar {
+        background-color: $color-dark70;
+      }
+    }
+
+    &::after {
+      @include transitionVisibility(opacity);
+      content: '';
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: $proximity-threshold;
+      height: 100%;
+      width: 1px;
+      background-color: $color-primary;
+      z-index: 2;
+    }
+
+    .collapse-button {
+      $size: 24px;
+
+      border-radius: 50%;
+      @include transitionVisibility(transform, color);
+      @include hoverShadow();
+      position: absolute;
+      top: 22px;
+      left: ((2 * $proximity-threshold + 1) - $size) / 2;
+      background-color: $color-white;
+      color: $color-dark70;
+      z-index: 3;
+      transform: scaleX(1);
+
+      &.reverse {
+        transform: scaleX(-1);
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-dark90;
+      }
+    }
+
+    .lp-resize-indicator {
+      $width: 1px + 2 * 4px;
+      $height: 36px;
+
+      position: absolute;
+      top: calc(50% - #{$height / 2});
+      height: $height;
+      width: $width;
+      left: ((2 * $proximity-threshold + 1) - $width) / 2;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1;
+
+      .lp-resize-indicator-bar {
+        @include transitionVisibility(background-color);
+        width: 2px;
+        border-radius: 2px;
+        height: 100%;
+        background-color: $color-dark30;
+      }
+    }
+  }
+
+  .lp-split-pane {
+    @include transitionVisibility(opacity);
+    z-index: 1;
+    flex-shrink: 0;
+    flex-grow: 1;
+    opacity: 1;
+
+    &.collapsible {
+      z-index: 0;
+    }
+
+    &.collapsed {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &:not(.collapsed) {
+      height: 100%;
+    }
+  }
+
+  &.with-transitioning-pane {
+    .lp-split-pane {
+      @include transitionVisibility(width, max-width, opacity);
+
+      &:last-child {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .lp-split-pane-separator {
+      @include transitionVisibility(transform);
+    }
+  }
+
+  &.resizing {
+    user-select: none;
+
+    .lp-split-pane-separator .lp-resize-indicator .lp-resize-indicator-bar {
+      background-color: $color-dark90;
+    }
+  }
+}

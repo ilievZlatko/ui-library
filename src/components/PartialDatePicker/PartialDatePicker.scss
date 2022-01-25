@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.lp-partial-date-picker {
+  display: flex;
+
+  .lp-partial-date-picker-day-input {
+    width: 80px;
+    margin-right: $spacing-regular;
+  }
+
+  .lp-partial-date-picker-year-input {
+    width: 96px;
+    margin-left: $spacing-regular;
+  }
+}

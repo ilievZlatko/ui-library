@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.lp-dropdowninput {
+  position: relative;
+  cursor: pointer;
+
+  .lp-dropdowninput-label {
+    height: 20px;
+    flex: 1;
+
+    &.placeholder {
+      color: $color-dark30;
+    }
+  }
+
+  .lp-legend-wrapper {
+    &:hover {
+      background-color: $color-light10;
+
+      .lp-legend-wrapper-content > .lp-icon {
+        color: $color-dark90;
+      }
+    }
+
+    &.lp-enabled:focus-within {
+      background-color: $color-light10;
+      color: $color-dark90;
+      border-color: transparent;
+    }
+  }
+}
+
+.lp-dropdowninput-popup {
+  width: 100%;
+
+  > .dropdown-item {
+    max-width: initial;
+  }
+}

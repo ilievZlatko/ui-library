@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.lp-progress-circle {
+  cursor: default;
+  display: block;
+
+  > .bg-line {
+    fill: none;
+    stroke: $color-light10;
+    stroke-width: 1;
+  }
+
+  > .fg-line {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 2.5;
+    @include transitionEducational(stroke-dasharray);
+
+    &.progress-enter-active {
+      @include animationEducational(circle-progress);
+      animation-fill-mode: forwards;
+    }
+  }
+
+  > text {
+    font-size: 0.5em;
+    font-weight: bold;
+    text-anchor: middle;
+  }
+
+  @each $name, $color in $series-color-map {
+    &.color-#{$name} {
+      > .fg-line {
+        stroke: $color;
+      }
+
+      > text {
+        fill: $color;
+      }
+    }
+  }
+}
+
+@keyframes circle-progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}

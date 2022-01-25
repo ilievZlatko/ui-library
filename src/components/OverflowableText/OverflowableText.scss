@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.overflowable-text {
+  @include ellipsis();
+  word-break: break-word;
+}
+
+.overflowable-text-tooltip-text {
+  word-break: break-word;
+}
+
+.overflowable-text-tooltip-separator {
+  width: calc(100% + #{2 * $spacing-medium});
+  border-bottom: 1px solid $color-white;
+  margin: $spacing-regular -1 * $spacing-medium;
+}
+

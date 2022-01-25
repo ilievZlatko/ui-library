@@ -1,0 +1,30 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-placeholder-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .placeholder-pane-icon {
+    color: $color-dark30;
+  }
+
+  > .placeholder-pane-text {
+    margin-top: $spacing-large;
+    @include textTitleBold();
+    text-align: center;
+    color: $color-dark90;
+    word-break: break-word;
+  }
+
+  > .placeholder-pane-sub-text {
+    margin-top: $spacing-large;
+    text-align: center;
+    color: $color-dark30;
+    word-break: break-word;
+  }
+
+  > .placeholder-pane-action {
+    margin-top: $spacing-xxxlarge;
+  }
+}

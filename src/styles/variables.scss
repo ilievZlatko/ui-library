@@ -1,0 +1,423 @@
+// ### UX Standard start ###
+
+// Layout
+
+$spacing-xsmall: 2px;
+$spacing-small: 4px;
+$spacing-regular: 8px;
+$spacing-medium: 12px;
+$spacing-large: 16px;
+$spacing-xlarge: 20px;
+$spacing-xxlarge: 24px;
+$spacing-xxxlarge: 32px; // TODO (Georgi): figure out a better name for these.
+$spacing-4xlarge: 36px;
+$spacing-5xlarge: 40px;
+
+$size-item-medium: 32px;
+$size-item-regular: 36px;
+$size-item-large: 40px;
+$size-item-xlarge: 44px;
+
+$size-icon-regular: 16px;
+$size-icon-large: 24px;
+
+$radius-small: 2px;
+$radius-regular: 4px;
+$radius-medium: 8px;
+$radius-circle: 10000px;
+
+// Typography
+
+// title uppercase
+$font-small-uppercase: 11px;
+
+// explanatory
+$font-small: 12px;
+$font-small-line-height: 16px;
+$font-explanatory-weight: 300;
+
+// regular
+$font-regular: 14px;
+$font-regular-line-height: 20px;
+
+// title
+$font-large: 18px;
+$font-large-line-height: 24px;
+
+// heading
+$font-xlarge: 24px;
+$font-xlarge-line-height: 32px;
+
+$font-xxlarge: 32px;
+$font-xxlarge-line-height: 36px;
+
+// bold value
+$font-xxxlarge: 40px;
+$font-xxxlarge-line-height: 40px;
+
+// Main colors
+
+$color-blue: #1076FB;
+$color-blue-hover: #0C5EC8;
+$color-green: #1DB92C;
+$color-green-hover: #19A126;
+$color-yellow: #FFC100;
+$color-yellow-hover: #DEA800;
+$color-orange: #FF801D;
+$color-orange-hover: #D96C18;
+$color-red: #FE2A4B;
+$color-red-hover: #D3223E;
+
+$color-map: (
+  'blue': $color-blue,
+  'blue-hover': $color-blue-hover,
+  'green': $color-green,
+  'green-hover': $color-green-hover,
+  'yellow': $color-yellow,
+  'yellow-hover': $color-yellow-hover,
+  'orange': $color-orange,
+  'orange-hover': $color-orange-hover,
+  'red': $color-red,
+  'red-hover': $color-red-hover,
+);
+
+$color-names: 'blue', 'green', 'orange', 'red', 'yellow';
+
+$color-dark90: #191919;
+$color-dark70: #4A4C4C;
+$color-dark30: #B2B7B9;
+$color-light10: #E1E4E5;
+$color-light02: #F6F9FB;
+$color-white: #FFFFFF;
+
+$color-primary: $color-blue;
+$color-primary-hover: $color-blue-hover;
+
+// Complementary colors
+
+// NOTE: use `darken($color-com##, 60%/45%/30%/15%)` or `lighten($color-com##, 75%/60%/45%/30%/15%)`
+// to get all the shades for the complementary colors.
+
+$color-com01: #348afb;
+$color-com02: #7ccfeb;
+$color-com03: #f874a4;
+$color-com04: #814cb5;
+$color-com05: #ffc226;
+$color-com06: #5cab62;
+
+// Series complementary colors
+
+$series-color-com01: #348afb;
+$series-color-com02: #33b5e0;
+$series-color-com03: #409eb0;
+$series-color-com04: #0f7366;
+$series-color-com05: #208d28;
+$series-color-com06: #8dca09;
+$series-color-com07: #ffc226;
+$series-color-com08: #ff801d;
+$series-color-com09: #bb1111;
+$series-color-com10: #f75691;
+$series-color-com11: #a00d61;
+$series-color-com12: #6625a5;
+
+$series-color-map: (
+  'blue': $series-color-com01,
+  'blue-light': $series-color-com02,
+  'teal': $series-color-com04,
+  'teal-light': $series-color-com03,
+  'green': $series-color-com05,
+  'green-light': $series-color-com06,
+  'orange': $series-color-com08,
+  'orange-light': $series-color-com07,
+  'red': $series-color-com09,
+  'red-light': $series-color-com10,
+  'purple': $series-color-com12,
+  'purple-light': $series-color-com11
+);
+
+// Transitions
+
+$duration-visibility: 0.2s;
+$easing-function-visibility: ease;
+
+$duration-appearance: 0.1s;
+$easing-function-appearance: linear;
+
+$duration-educational: 0.8s;
+$easing-function-educational: linear;
+
+// Mixins
+
+@mixin dropdownShadow($extra: false) {
+  @if $extra {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05), $extra;
+  } @else {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+@mixin reverseDropdownShadow($extra: false) {
+  @if $extra {
+    box-shadow: 0 -8px 20px 0 rgba(0, 0, 0, 0.05), $extra;
+  } @else {
+    box-shadow: 0 -8px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+}
+
+@mixin hoverShadow() {
+  box-shadow:
+    2px 6px 12px 0 rgba(67, 67, 67, 0.06),
+    0 0 1px 0 rgba(0, 0, 0, 0.06),
+    0 2px 8px 0 rgba(0, 0, 0, 0.06);
+}
+
+@mixin textHeading() {
+  font-size: $font-xlarge;
+  font-family: $font-family-circular-bold;
+  line-height: $font-xlarge-line-height;
+}
+
+@mixin textTitleBold() {
+  font-size: $font-large;
+  font-family: $font-family-circular-bold;
+  line-height: $font-large-line-height;
+}
+
+@mixin textTitle() {
+  font-size: $font-large;
+  font-family: $font-family-circular-book;
+  line-height: $font-large-line-height;
+}
+
+@mixin textBold() {
+  font-size: $font-regular;
+  font-family: $font-family-circular-bold;
+  line-height: $font-regular-line-height;
+}
+
+@mixin textRegular() {
+  font-size: $font-regular;
+  font-family: $font-family-circular-book;
+  line-height: $font-regular-line-height;
+}
+
+@mixin textExplanatory() {
+  font-weight: $font-explanatory-weight;
+  font-size: $font-small;
+  font-family: $font-family-circular-book;
+  line-height: $font-small-line-height;
+}
+
+@mixin textTitleUppercase() {
+  font-size: $font-small-uppercase;
+  font-family: $font-family-circular-bold;
+  line-height: $font-small-line-height;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin textMedium() {
+  font-size: $font-xxlarge;
+  font-family: $font-family-circular-bold;
+  line-height: $font-xxxlarge-line-height;
+}
+
+@mixin textLarge() {
+  font-size: $font-xxxlarge;
+  font-family: $font-family-circular-bold;
+  line-height: $font-xxxlarge-line-height;
+}
+
+@mixin ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin verticalOverlay() {
+  overflow-y: overlay;
+
+  @supports not (overflow: overlay) {
+    overflow-y: auto;
+  }
+}
+
+@mixin tileStates() {
+  transition: 0.15s background linear, 0.15s color linear, 0.15s box-shadow linear, 0.15s border linear,
+    0.15s margin linear, 0.15s z-index linear;
+
+  &:hover {
+    box-shadow: 0px 2px 8px 0px rgba($color-dark90, 0.06), 0px 0px 1px 0px rgba($color-dark90, 0.06),
+      2px 6px 12px 0px rgba($color-dark90, 0.06);
+    margin-top: -2px;
+    margin-bottom: 2px;
+  }
+
+  &.active {
+    border: 1px solid $color-blue;
+
+    &:hover {
+      box-shadow: 0px 2px 8px 0px rgba($color-blue, 0.08), 0px 0px 1px 0px rgba($color-blue, 0.08),
+        2px 6px 12px 0px rgba($color-blue, 0.08);
+    }
+  }
+}
+
+@mixin transitionVisibility($properties...) {
+  transition-duration: $duration-visibility;
+  transition-timing-function: $easing-function-visibility;
+  transition-property: $properties;
+}
+
+@mixin animationVisibility($animation, $properties...) {
+  animation: $animation $duration-visibility $easing-function-visibility;
+}
+
+@mixin transitionAppearance($properties...) {
+	transition-duration: $duration-appearance;
+	transition-timing-function: $easing-function-appearance;
+  transition-property: $properties;
+}
+
+@mixin animationAppearance($animation, $properties...) {
+  animation: $animation $duration-appearance $easing-function-appearance;
+}
+
+@mixin transitionEducational($properties...) {
+	transition-duration: $duration-educational;
+	transition-timing-function: $easing-function-educational;
+  transition-property: $properties;
+}
+
+@mixin animationEducational($animation, $properties...) {
+  animation: $animation $duration-educational $easing-function-educational;
+}
+
+// ### UX Standard end ###
+
+$zindex-dropdown: 950;
+$zindex-global-error: 1100;
+$zindex-nav-bar: 1150;
+$zindex-modal: 900;
+$zindex-portal: 1050;
+$zindex-tooltip: 1000;
+
+$white: #ffffff;
+$white-dark: #f3f2f2;
+$white-darker: #f9f9f9;
+$black: #191919;
+$absolute-black: #000000;
+$gray-dark: #4A4C4C;
+$gray: #b7b4b0;
+$gray-light: #e0e0e0;
+$gray-lighter: #fafbfc;
+$blue: #1076fb;
+$blue-dark: mix($blue, black, 70%);
+$blue-light: #2db7ff;
+$blue-lighter: #B3DDF5;
+$blue-highlight: #cbe9f9;
+$blue-highlight-lighter: #f2f9fd;
+$red: #ce3f6d;
+$red-dark: #901c43;
+$green: #00c165;
+$green-dark: #00a656;
+$green-darker: #008646;
+$green-light: #ace8ae;
+$plum-dark: #370740;
+
+// Mix white with the given color. Percentage is used to determine how "light" the end result will be.
+// ex: tint($color-primary, 85%); - gives a lighter color than $color-primary, by 85%.
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Mix black with the given color. Percentage is used to determine how "dark" the end result will be.
+// ex: shade($color-primary, 20%); - gives a darker color than $color-primary, by 20%.
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+$font-family-circular-book: 'circular-book', Helvetica, Arial, sans-serif;
+$font-family-circular-medium: 'circular-book-medium', Helvetica, Arial, sans-serif;
+$font-family-circular-bold: 'circular-book-bold', Verdana, Tahoma, sans-serif;
+
+$font-size-tiny: 10px;
+$font-size-mini: 11px;
+$font-size-small: 12px;
+$font-size: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-larger: 24px;
+$font-size-largest: 28px;
+
+$guide-error: #fb3f54;
+$guide-warning: #ffb500;
+
+@mixin clear() {
+  clear: both;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin spinner($size: 32px, $color: $color-light10, $speed: .5s, $border-width: 3px) {
+  display: block;
+  backface-visibility: hidden;
+  width: $size;
+  height: $size;
+
+  &::after {
+    content: '';
+    display: block;
+    border: $border-width solid $color;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    animation: spin $speed ease infinite;
+  }
+}
+
+@mixin loading($animate: true, $clip: true, $clip-mode: text) {
+  background: linear-gradient(to right, $color-light10 0%, $color-light02 50%, $color-light10 100%);
+  background-size: 200% auto;
+
+  @if $animate == true {
+    animation: shine 1.5s linear infinite;
+  } @else {
+    color: $color-light10;
+  }
+
+  @if $clip == true {
+    cursor: default;
+    word-break: break-all;
+    color: transparent;
+
+    background-clip: $clip-mode;
+  }
+}
+
+@mixin loadingPlaceholder($width: 40%) {
+  @include loading(true, true, border-box);
+  width: $width;
+  height: 24px;
+  border-radius: $radius-regular;
+}
+
+@mixin obsoleteState() {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.8;
+  }
+}

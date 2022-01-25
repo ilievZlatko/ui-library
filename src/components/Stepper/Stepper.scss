@@ -1,0 +1,67 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-stepper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  > .stepper-step {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    @include textBold();
+
+    &:last-child {
+      flex-grow: 0;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      display: block;
+      flex-grow: 1;
+      height: 1px;
+      margin: 0 $spacing-regular;
+      background: $color-light10;
+    }
+
+    &.active {
+      > .step-indicator > .step-number {
+        background-color: $color-dark90;
+        color: $color-white;
+      }
+
+      > .step-label {
+        color: $color-dark90;
+      }
+    }
+
+    > .step-indicator {
+      margin-right: $spacing-regular;
+
+      > .step-number {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        color: $color-dark70;
+        background-color: $color-light02;
+        border-radius: $radius-circle;
+        text-align: center;
+        line-height: 24px;
+        user-select: none;
+      }
+    }
+
+    > .step-label {
+      color: $color-dark70;
+
+      > a {
+        color: inherit;
+        display: block;
+      }
+    }
+  }
+}

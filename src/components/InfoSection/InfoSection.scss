@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.lp-info-section {
+  align-items: flex-start;
+  display: flex;
+  font-family: $font-family-circular-book;
+
+  & + & {
+    margin-top: $spacing-large;
+  }
+
+  > .lp-info-section-sidebar {
+    align-self: stretch;
+    background-color: $color-light02;
+    border-radius: $radius-medium;
+
+    > .lp-icon {
+      flex-shrink: 0;
+      margin: 10px;
+    }
+  }
+
+  > .lp-info-section-content {
+    flex: 1;
+    padding: $spacing-xsmall $spacing-large;
+    width: 100%;
+
+    > :last-child {
+      margin-bottom: 10px;
+    }
+
+    > .lp-info-section-title {
+      @include textBold();
+      flex: 1;
+      margin: 0;
+      padding: $spacing-regular 0;
+    }
+  }
+}

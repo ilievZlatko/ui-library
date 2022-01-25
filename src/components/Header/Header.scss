@@ -1,0 +1,84 @@
+@import '../../styles/variables';
+
+.lp-header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 69px;
+  padding: 0;
+
+  &:not(.big).bold {
+    > .title-wrapper > .title-row > .title {
+      @include textBold();
+    }
+  }
+
+  &.big:not(.bold) {
+    > .title-wrapper > .title-row > .title {
+      @include textTitle();
+    }
+  }
+
+  &.big.bold {
+    > .title-wrapper > .title-row > .title {
+      @include textTitleBold();
+    }
+  }
+
+  &.with-spacing {
+    padding: 0 $spacing-xxlarge;
+  }
+
+  &.with-separator {
+    border-bottom: 1px solid $color-light10;
+  }
+
+  &.wrap {
+    padding: $spacing-large $spacing-xxlarge;
+    height: auto;
+
+    > .title-wrapper > .title {
+      word-break: break-all;
+    }
+
+    > .actions {
+      align-self: flex-start;
+    }
+  }
+
+  > .title-wrapper {
+    flex-shrink: 1;
+    min-width: 0;
+
+    > .title-row {
+      display: flex;
+      align-items: center;
+
+      > .title {
+        position: relative;
+        align-items: center;
+        @include textRegular();
+      }
+
+      > :not(.title) {
+        flex-shrink: 0;
+      }
+    }
+
+    > .subtitle {
+      margin-top: $spacing-small;
+      @include textExplanatory();
+      color: $color-dark30;
+    }
+  }
+
+  > .info-icon {
+    margin-left: $spacing-regular;
+    color: $color-dark30;
+  }
+
+  > .actions {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+}

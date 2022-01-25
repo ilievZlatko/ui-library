@@ -1,0 +1,30 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-filter-dropdown > .lp-btn-content > .lp-icon {
+  color: $color-dark30;
+}
+
+.filter-dropdown-type-option {
+  display: flex;
+  padding: $spacing-regular $spacing-large;
+  user-select: none;
+  width: 100%;
+
+  &.with-header {
+    margin-top: $spacing-regular;
+    border-top: 1px solid $color-light10;
+  }
+
+  > .filter-dropdown-type-checkbox {
+    margin-right: $spacing-regular;
+
+    * {
+      cursor: pointer;
+    }
+  }
+
+  > .filter-dropdown-type-icon {
+    margin: 0 6px 0 0;
+    color: $color-dark90;
+  }
+}

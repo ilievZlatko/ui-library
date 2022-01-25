@@ -1,0 +1,141 @@
+@import '../../styles/variables';
+
+.lp-text-input-wrapper {
+  // NOTE: Keep the sizing styles in sync with the ones in TextInput.measureTextWidth
+  cursor: text;
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-light02;
+  border-radius: $radius-regular;
+  height: $size-item-regular;
+  font-size: $font-regular;
+  line-height: $font-regular-line-height;
+  padding: $spacing-small $spacing-large;
+  background-color: $color-light02;
+  color: $color-dark70;
+  position: relative;
+
+  @include transitionAppearance(border-color, background-color, width);
+
+  &:active, &:disabled {
+    outline: 0;
+  }
+
+  .lp-loading-spinner {
+    margin-left: $spacing-small;
+  }
+
+  &.embedded {
+    border: unset;
+    background-color: unset;
+  }
+
+  &:not(.embedded) {
+    &:focus-within {
+      background-color: $color-white;
+
+      &:not(.error):not(.warning) {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    border-color: $color-light02;
+    background-color: $color-light02;
+    color: $color-dark30;
+  }
+
+  &.error {
+    border-color: $color-red;
+  }
+
+  &.warning {
+    border-color: $color-yellow;
+  }
+
+  &:not(.disabled) {
+    &.readonly {
+      > input:focus, &:focus-within, &.active {
+        background-color: $color-light10;
+
+        &:not(.error):not(.warning) {
+          border-color: $color-light10;
+        }
+      }
+    }
+
+    &:hover:not(:focus-within):not(.embedded) {
+      background-color: $color-light10;
+
+      &:not(.error):not(.warning) {
+        border-color: $color-light10;
+      }
+    }
+
+    &:focus-within {
+      outline: 0;
+
+      > .lp-text-input {
+        color: $color-dark90;
+      }
+
+      > .lp-icon:not(.lp-text-input-clear):not(.lp-notification-tooltip) {
+        color: $color-dark90;
+      }
+    }
+  }
+
+  &.with-clear {
+    padding-right: $spacing-xxxlarge;
+  }
+
+  > .lp-icon {
+    display: block;
+    @include transitionAppearance(color);
+    color: $color-dark30;
+  }
+
+  > .lp-text-input-icon {
+    margin-right: $spacing-regular;
+    pointer-events: none;
+  }
+
+  > .lp-text-input-clear {
+    position: absolute;
+    right: $spacing-regular;
+    color: $color-light10;
+  }
+
+  > .lp-text-input {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    background: transparent;
+    border: 0;
+    line-height: $font-regular-line-height;
+    cursor: text;
+
+    &.with-ellipsis {
+      @include ellipsis();
+    }
+
+    &::placeholder {
+      @include transitionAppearance(color);
+      opacity: 1;
+      color: $color-dark30;
+    }
+
+    &:disabled {
+      background-color: $color-light02;
+      color: $color-dark30;
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+}

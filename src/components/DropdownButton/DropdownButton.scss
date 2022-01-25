@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.lp-dropdown-button-anchor {
+
+  .lp-icon {
+    color: $color-dark30;
+  }
+
+  &.placeholder, &.placeholder:hover, &.placeholder:focus {
+    color: $color-dark30;
+  }
+}

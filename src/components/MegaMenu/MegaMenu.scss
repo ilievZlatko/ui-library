@@ -1,0 +1,14 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-mega-menu {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: $radius-regular;
+  user-select: none;
+
+  > .mega-menu-columns {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}

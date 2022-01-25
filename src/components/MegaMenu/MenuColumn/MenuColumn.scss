@@ -1,0 +1,9 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 1 0;
+  width: 100%;
+}

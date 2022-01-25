@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.lp-fib {
+  background: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  position: relative;
+
+  .lp-button {
+    margin: 0;
+    position: static;
+    flex-shrink: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .text {
+    text-align: start;
+    padding: 0 $spacing-medium;
+    font-family: $font-family-circular-book;
+    color: $color-dark70;
+    flex: 1;
+  }
+
+  $colors: (
+    'light': $color-dark90,
+    'primary': $color-blue,
+    'danger': $color-red,
+    'success': $color-green
+  );
+
+  @each $name, $color in $colors {
+    .lp-button.color-#{$name} {
+      &:hover + .text,
+      &:active + .text,
+      &:focus + .text {
+        color: #{$color};
+      }
+    }
+  }
+}

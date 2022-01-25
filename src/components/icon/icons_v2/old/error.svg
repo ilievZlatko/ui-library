@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>OpenError</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="OpenError" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tooltip-hover">
+            <rect id="Rectangle-249" fill="#FC2F49" transform="translate(8.000000, 8.000000) scale(1, -1) translate(-8.000000, -8.000000) " x="0" y="0" width="16" height="16" rx="8"></rect>
+            <path d="M9.002,4 L7,4 L7.385,9.357 L8.617,9.357 L9.002,4 Z M7.044,10.963 C7.044,11.48 7.462,11.909 7.99,11.909 C8.518,11.909 8.947,11.48 8.947,10.963 C8.947,10.435 8.518,10.006 7.99,10.006 C7.462,10.006 7.044,10.435 7.044,10.963 Z" id="!" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

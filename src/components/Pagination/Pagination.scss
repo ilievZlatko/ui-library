@@ -1,0 +1,75 @@
+@import '../../styles/variables.scss';
+
+.lp-pagination {
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+
+  > *:not(:last-child) {
+    margin-right: $spacing-regular;
+  }
+
+  .lp-button {
+    border-radius: $radius-small;
+
+    &:not([disabled]) {
+      color: $color-dark30;
+    }
+  }
+
+  .page-list {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    background-color: $color-light02;
+    padding: $spacing-xsmall;
+    border-radius: $radius-small;
+
+    .page-button {
+      width: $size-item-medium;
+      height: $size-item-medium;
+    }
+  }
+
+  .page-button {
+    @include transitionAppearance(color, background-color, box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing-xsmall;
+    box-shadow: none;
+    border-radius: $radius-small;
+    background-color: $color-light02;
+    user-select: none;
+    color: $color-dark70;
+
+    &.disabled {
+      color: $color-dark30;
+    }
+    
+    &:not(.disabled) {
+      cursor: pointer;
+      
+      &:hover:not(.active) {
+        background-color: $color-light10;
+        color: $color-dark90;
+      }
+    }
+    
+    & + .page-button {
+      margin-left: $spacing-small;
+    }
+    
+    &.active {
+      @include textBold();
+      background-color: $color-white;
+      box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+      color: $color-dark90;
+    }
+  }
+
+  .page-arrow {
+    width: $size-item-regular;
+    height: $size-item-regular;
+  }
+}

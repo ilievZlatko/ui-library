@@ -1,0 +1,124 @@
+@import '../../styles/variables';
+
+.lp-multi-value-input {
+  // wrapper needed for layout - otherwise external margin may override internal negative one
+  // and all users of the component will have to add their own fix.
+  > .multi-line-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1 * $spacing-xsmall;
+
+    > .multi-value {
+      height: $size-item-regular;
+      margin-right: $spacing-xsmall;
+      margin-bottom: $spacing-xsmall;
+      overflow: hidden;
+      border-radius: 0;
+      width: var(--pill-width);
+
+      &.animate-width {
+        @include transitionAppearance(width);
+        transition-delay: 300ms;
+      }
+
+      > .multi-value-pill {
+        width: 100%;
+
+        &.with-close:hover > .label {
+          border-top-right-radius: $radius-regular; // hide the border tip behind the close icon.
+        }
+
+        &:not(.disabled) {
+          > .label:hover {
+            background-color: $color-light10;
+          }
+        }
+
+        > .label {
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+
+      &:first-child {
+        border-top-left-radius: $radius-regular;
+        border-bottom-left-radius: $radius-regular;
+
+        > .multi-value-pill .label {
+          border-top-left-radius: $radius-regular;
+          border-bottom-left-radius: $radius-regular;
+        }
+      }
+
+      &:last-child {
+        > .multi-value-pill .label {
+          border-top-right-radius: $radius-regular;
+          border-bottom-right-radius: $radius-regular;
+        }
+      }
+
+      input {
+        height: $size-item-regular;
+        background-color: $color-light02;
+        padding-left: $spacing-medium;
+        border: 1px solid transparent;
+        border-radius: 0;
+        font-size: $font-regular;
+        line-height: $font-regular-line-height;
+        color: inherit;
+        width: 100%;
+
+        &::placeholder {
+          color: $color-dark30;
+          opacity: 1;
+        }
+
+        &:focus {
+          border-color: $color-primary;
+          background-color: $color-white;
+        }
+
+        &.first {
+          border-top-left-radius: $radius-regular;
+          border-bottom-left-radius: $radius-regular;
+        }
+
+        &.error {
+          border-color: $color-red;
+        }
+
+        &.warning {
+          border-color: $color-yellow;
+        }
+      }
+    }
+
+    > .multi-value-button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+      &.enabled {
+        color: $color-primary;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+$typeahead-option-width: 286px;
+
+.lp-multi-value-input-dropdown {
+  li {
+    max-width: $typeahead-option-width;
+    min-width: $typeahead-option-width;
+
+    .type-ahead-note {
+      border-bottom: 1px solid $color-light10;
+      margin: 0;
+      padding: 0 $spacing-large $spacing-regular;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+@import '../../styles/variables';
+
+.lp-feedback {
+  max-width: 350px;
+  position: relative;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.20);
+  filter: blur(0.1);
+
+  &.warning {
+    > .content {
+      background-color: $guide-warning;
+
+      .feedback-button, .feedback-button:hover {
+        color: $guide-warning !important;
+      }
+
+    }
+    > .arrow {
+      border-color: $guide-warning;
+    }
+  }
+
+  &.error {
+    > .content {
+      background-color: $guide-error;
+
+      .feedback-button, .feedback-button:hover {
+        color: $guide-error !important;
+      }
+
+      p, a {
+        color: $color-white;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+    > .arrow {
+      border-color: $guide-error;
+    }
+  }
+
+  &.info {
+    > .content {
+      .feedback-button, .feedback-button:hover {
+        color: $black !important;
+      }
+    }
+  }
+  > .arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: $black;
+  }
+  > .content {
+    background-color: $black;
+    border-radius: $radius-regular;
+    padding:  16px 24px 20px;
+    color: $color-white;
+
+    &.compact {
+      padding:  8px 12px;
+    }
+
+    > .title {
+      @include textBold();
+      margin: 0 0 12px;
+    }
+    > .message {
+      @include textExplanatory();
+      margin: 0px;
+    }
+    a {
+      text-decoration: underline;
+    }
+
+    > .default {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+[x-placement^="top"] {
+    margin-bottom: $spacing-small;
+
+  .lp-feedback {
+    > .arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      bottom: -5px;
+      left: calc(50% - 10px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement*="-start"] {
+    .lp-feedback > .arrow {
+      left: 10px;
+      transform: none;
+    }
+  }
+  &[x-placement*="-end"] {
+    .lp-feedback > .arrow {
+      left: auto;
+      transform: none;
+      right: 10px;
+    }
+  }
+}
+
+[x-placement^="bottom"] {
+  margin-top: $spacing-small;
+
+  .lp-feedback {
+    > .arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      top: -5px;
+      left: calc(50% - 10px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement*="-start"] {
+    .lp-feedback > .arrow {
+      left: 10px;
+      transform: none;
+    }
+  }
+  &[x-placement*="-end"] {
+    .lp-feedback > .arrow {
+      left: auto;
+      transform: none;
+      right: 10px;
+    }
+  }
+}
+
+[x-placement^="right"] {
+  margin-left: $spacing-small;
+
+  .lp-feedback {
+    > .arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      left: -5px;
+      top: calc(50% - 10px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement*="-start"] {
+    .lp-feedback > .arrow {
+      top: 10px;
+      transform: none;
+    }
+  }
+  &[x-placement*="-end"] {
+    .lp-feedback > .arrow {
+      top: auto;
+      transform: none;
+      bottom: 10px;
+    }
+  }
+}
+
+[x-placement^="left"] {
+  margin-right: $spacing-small;
+
+  .lp-feedback {
+    > .arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      right: -5px;
+      top: calc(50% - 10px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement*="-start"] {
+    .lp-feedback > .arrow {
+      top: 10px;
+      transform: none;
+    }
+  }
+  &[x-placement*="-end"] {
+    .lp-feedback > .arrow {
+      top: auto;
+      transform: none;
+      bottom: 10px;
+    }
+  }
+}

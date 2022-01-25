@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.help-center {
+  > .title-box {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 36px;
+    align-items: center;
+
+    > .title {
+      flex: 1;
+      margin: 0;
+      @include textHeading();
+    }
+  }
+  > .wrapper > .content > .body > .section, > .section {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin: 0;
+    }
+    > p {
+      font-size: 14px;
+
+      &.title {
+        font-size: 18px;
+        font-family: $font-family-circular-bold;
+        line-height: 28px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

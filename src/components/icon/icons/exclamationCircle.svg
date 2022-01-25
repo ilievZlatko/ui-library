@@ -1,0 +1,13 @@
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M10 6c.2761424 0 .5.22385763.5.5v5c0 .2761424-.2238576.5-.5.5-.27614237 0-.5-.2238576-.5-.5v-5c0-.27614237.22385763-.5.5-.5zm0 7c.2761424 0 .5.2238576.5.5s-.2238576.5-.5.5c-.27614237 0-.5-.2238576-.5-.5s.22385763-.5.5-.5z" id="a-exclamation"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle fill="#E1E4E5" cx="10" cy="10" r="10"/>
+    <mask id="b-exclamation" fill="currentColor">
+      <use xlink:href="#a-exclamation"/>
+    </mask>
+    <use fill="currentColor" xlink:href="#a-exclamation"/>
+    <path fill="currentColor" mask="url(#b-exclamation)" d="M0 0h20v20H0z"/>
+  </g>
+</svg>

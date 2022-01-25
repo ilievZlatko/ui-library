@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.lp-split-button {
+  display: flex;
+
+  .lp-button:not(:last-child) {
+    border-radius: $radius-regular 0 0 $radius-regular;
+    margin-right: 1px;
+  }
+
+  .lp-button:not(:first-child)  {
+    border-radius: 0 $radius-regular $radius-regular 0;
+  }
+}

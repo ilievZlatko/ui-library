@@ -1,0 +1,151 @@
+@import '../../../styles/variables';
+
+%highlighted {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  content: '';
+  background-color: rgba(0,146,221,.1);
+  border-radius: 0;
+  opacity: 1;
+  height: 28px;
+  width: 38px;
+}
+
+%base {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  content: '';
+  height: 28px;
+  width: 28px;
+  z-index: 0;
+}
+
+.lp-day {
+  flex: 0 0 auto;
+  position: relative;
+  background-clip: padding-box;
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 27px;
+  text-align: center;
+  cursor: pointer;
+
+  .label {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::after {
+    @extend %base;
+    border-radius: 100%;
+  }
+
+  &.today {
+    &::after {
+      border: 1px solid $color-primary;
+      opacity: 1;
+      @extend %base;
+    }
+
+    &.highlighted:not(.outside-month):not(.selected){
+      &::before {
+        @extend %highlighted;
+      }
+
+      &::after {
+        width: 28px;
+        border-radius: 50%;
+        background-color: transparent;
+        left: 0px;
+      }
+    }
+
+
+    &.disabled {
+      &::after {
+        border-color: $color-light10;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    user-select: none;
+
+    .label {
+      color: $color-light10;
+    }
+  }
+
+  &.selected {
+    &::after {
+      background-color: $color-primary;
+      opacity: 1;
+      @extend %base;
+    }
+
+    &.disabled {
+      &::after {
+        background-color: $color-light10;
+        opacity: 1;
+        @extend %base;
+      }
+    }
+
+    .label {
+      color: $color-white;
+    }
+  }
+
+  &:hover:not(.selected):not(.highlighted):not(.disabled) {
+    &::after {
+      background-color: $color-light10;
+      opacity: 1;
+      @include transitionAppearance(opacity, background-color);
+      @extend %base;
+    }
+
+    .label {
+      @include transitionAppearance(color);
+      color: $color-dark90;
+    }
+  }
+
+  &.highlighted:not(.outside-month):not(.selected) {
+    color: $color-dark70;
+    border-radius: 0;
+
+    &::after {
+      @extend %highlighted;
+    }
+  }
+
+  &.highlighted.selected:not(.outside-month) {
+    &::before {
+      @extend %highlighted;
+      width: 17px;
+      right: 17px;
+    }
+    &.start {
+      &::before {
+        @extend %highlighted;
+        width: 17px;
+        left: 17px;
+      }
+    }
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.outside-month {
+    color: $color-light10;
+  }
+}

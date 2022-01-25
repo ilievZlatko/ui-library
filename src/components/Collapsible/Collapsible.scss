@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.lp-collapsible {
+  @include transitionVisibility(height);
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-regular;
+  border: 1px solid $color-light10;
+
+  .lp-collapsible-title {
+    @include textBold();
+    @include transitionAppearance(border-bottom-color);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0 $spacing-regular 0 $spacing-medium;
+    z-index: 1;
+    background-color: $color-light02;
+    cursor: pointer;
+
+    > .collapsible-chevron {
+      @include transitionVisibility(transform);
+      flex-shrink: 0;
+      transform: rotate(-90deg);
+      margin-right: $spacing-small;
+      color: $color-dark70;
+    }
+
+    > .user-icon {
+      margin-right: $spacing-regular;
+    }
+
+    > .overflowable-text-tooltip {
+      width: 100%;
+    }
+
+    .actions {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+    }
+  }
+
+  .lp-collapsible-content {
+    @include transitionVisibility(transform);
+    overflow: hidden;
+    transform: translateY(-100%);
+  }
+
+  &.expanded {
+    .lp-collapsible-title {
+      .collapsible-chevron {
+        transform: rotate(0deg);
+      }
+    }
+
+    .lp-collapsible-content {
+      transform: translateY(0);
+    }
+  }
+
+  &.active {
+    border-color: $color-primary;
+  }
+
+  &.embedded {
+    border-radius: 0 0 $radius-regular $radius-regular;
+
+    .lp-collapsible-title {
+      background-color: $color-white;
+      @include textRegular();
+      font-weight: normal;
+    }
+  }
+
+  &.disabled {
+    &.embedded {
+      color: $color-dark30;
+
+      .collapsible-chevron {
+        color: $color-dark30;
+      }
+    }
+
+    &:not(.embedded) {
+      border-color: $color-light02;
+    }
+
+    .lp-collapsible-title {
+      cursor: default;
+    }
+  }
+}

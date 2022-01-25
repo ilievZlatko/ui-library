@@ -1,0 +1,205 @@
+@import '../../styles/variables';
+
+html.modal-open {
+  overflow: hidden;
+}
+
+.lp-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  @include transitionVisibility(opacity);
+
+  > .wrapper {
+    transform: scale(1);
+    display: flex;
+    align-items: center;
+    text-size-adjust: 100%;
+    height: fit-content;
+    @include transitionVisibility(transform);
+
+    > .content {
+      @include dropdownShadow();
+      background-color: $color-white;
+      border-radius: $radius-regular;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+      @include verticalOverlay();
+
+      > .header {
+        box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: $spacing-xxxlarge $spacing-xxxlarge $spacing-large;
+        background-color: white;
+        z-index: 1;
+        position: sticky;
+        top: -1 * $spacing-large;
+
+        &::after {
+          @include transitionVisibility(opacity);
+          content: '';
+          width: 100%;
+          height: 100%;
+          @include dropdownShadow();
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+        }
+
+        &.scrolled {
+          &::after {
+            opacity: 1;
+          }
+
+          > .title.big {
+            @include textBold();
+          }
+        }
+
+        > .title {
+          flex: 1;
+          margin: 0;
+          @include transitionVisibility(font-size);
+          @include textBold();
+          &.big {
+            @include textHeading();
+          }
+        }
+        > .cross {
+          color: $color-dark30;
+          @include transitionAppearance(color);
+          padding: $spacing-small;
+          margin: -1 * $spacing-regular 0;
+
+          &:hover {
+            color: $color-dark90;
+          }
+        }
+      }
+      > .body {
+        position: relative;
+        flex: 1;
+        padding: 0 $spacing-xxxlarge;
+        z-index: 0;
+      }
+      > .footer {
+        box-shadow: none;
+        padding: $spacing-xxlarge $spacing-xxxlarge $spacing-xxxlarge;
+        margin-top: $spacing-xxlarge;
+        display: flex;
+        justify-content: flex-end;
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        z-index: 1;
+
+        &::after {
+          @include transitionVisibility(opacity);
+          content: '';
+          width: 100%;
+          height: 100%;
+          @include reverseDropdownShadow();
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+        }
+
+        &.scrolled {
+          &::after {
+            opacity: 1;
+          }
+        }
+
+        > button {
+          & + button {
+            margin-left: 8px;
+          }
+        }
+      }
+      > .footer-accommodation {
+        height: $spacing-xxxlarge;
+      }
+      > .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color-white, 0.5);
+
+        > .spinner {
+          @include spinner(32px, $color-dark70);
+        }
+      }
+      &.overlay-spinner {
+        > .header {
+          > .cross {
+            display: none;
+          }
+        }
+        > .spinner-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+        }
+      }
+      &.content-replacing-spinner {
+        > .header > .cross,
+        > .body,
+        > .footer {
+          display: none;
+        }
+      }
+    }
+  }
+  &.full-screen {
+    > .wrapper {
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+
+      > .content {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &.align-top {
+    > .wrapper {
+      align-items: flex-start;
+    }
+  }
+  &.v-enter,
+  &.v-leave-to {
+    opacity: 0;
+
+    > .wrapper {
+      transform: scale(1.1);
+    }
+  }
+}

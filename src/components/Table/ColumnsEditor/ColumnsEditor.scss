@@ -1,0 +1,93 @@
+@import '../../../styles/variables';
+
+.edit-columns-description {
+  margin-bottom: $spacing-xxlarge;
+}
+
+.edit-column-item-wrapper {
+  margin-top: $spacing-regular;
+
+  .edit-column-item {
+    display: flex;
+    align-items: center;
+    height: $size-item-large;
+    border-radius: $radius-regular;
+    user-select: none;
+    cursor: move;
+    padding: 0 $spacing-medium;
+    background-color: $color-light02;
+
+    &.locked {
+      cursor: not-allowed;
+      color: $color-dark30;
+
+      .lp-icon {
+        color: $color-dark30;
+      }
+    }
+
+    .lp-icon {
+      margin-left: -1 * $spacing-regular;
+      margin-right: $spacing-small;
+    }
+
+    .lp-toggle {
+      margin-left: auto;
+    }
+  }
+}
+
+.edit-column-item-wrapper {
+  &.dragged > .edit-column-item {
+    @include animationVisibility(popOut);
+  }
+
+  &.dropped > .edit-column-item {
+    @include animationVisibility(popIn);
+  }
+
+  &.dragged,
+  &.dropped {
+    cursor: move;
+    pointer-events: all !important;
+    z-index: $zindex-portal;
+
+    > .edit-column-item {
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.edit-columns-reset-button {
+  margin-right: auto;
+}
+
+@mixin resting() {
+  transform: scale(1);
+  box-shadow: none;
+  background-color: $color-light02;
+}
+
+@mixin dragged() {
+  transform: scale(1.02);
+  @include dropdownShadow();
+  background-color: $color-white;
+}
+
+@keyframes popOut {
+  from {
+    @include resting();
+  }
+  to {
+    @include dragged();
+  }
+}
+
+@keyframes popIn {
+  from {
+    @include dragged();
+  }
+  to {
+    @include resting();
+  }
+}

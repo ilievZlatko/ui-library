@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+
+.lp-tab-strip {
+  width: 100%;
+
+  .lp-tab-strip-list {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 0;
+
+    .lp-tab-strip-header-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid $color-light10;
+    }
+
+    .lp-tab-strip-header {
+      padding: $spacing-large 0 14px;
+      cursor: pointer;
+      user-select: none;
+      flex: 1 1 auto;
+      text-align: center;
+      border-bottom: 1px solid $color-light10;
+      color: $color-dark70;
+
+      &.subtitle {
+        padding: $spacing-regular 0 6px;
+      }
+
+      .lp-tab-strip-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include textBold();
+
+        font-size: $font-small-uppercase;
+        &.largeTitle {
+          font-size: $font-regular;
+        }
+
+        > i {
+          margin-right: $spacing-small;
+        }
+      }
+
+      .lp-tab-strip-subtitle {
+        margin-top: $spacing-small;
+        font-size: $font-small;
+      }
+
+      .lp-tab-strip-badge {
+        margin-left: $spacing-regular;
+      }
+
+      &:hover {
+        color: $color-dark90;
+      }
+
+      &.router-link-active,
+      &.active {
+        border-bottom: 1px solid $color-dark90;
+        color: $color-dark90;
+      }
+    }
+  }
+}
+
+.lp-tab-strip-vertical {
+  display: flex;
+  flex-direction: row;
+
+  .lp-tab-strip-list {
+    flex-direction: column;
+    align-self: start;
+    flex: 1;
+    padding-top: $spacing-xxlarge;
+
+    .lp-tab-strip-header-actions {
+      justify-content: flex-start;
+      border-bottom: 1px solid transparent;
+    }
+
+    .lp-tab-strip-header {
+      border-bottom-width: 0;
+      border-left: 1px solid transparent;
+      flex-basis: auto !important;
+      padding: $spacing-medium 0;
+
+      .lp-tab-strip-title {
+        justify-content: flex-start;
+        padding-left: $spacing-xxlarge;
+        @include textRegular();
+      }
+
+      .lp-tab-strip-subtitle {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 48px;
+      }
+
+      &:hover {
+        border-bottom-width: 0;
+        color: $color-dark90;
+      }
+
+      &.active,
+      &.router-link-exact-active {
+        border-bottom-width: 0;
+        border-color: $color-dark90;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+// global lib-ui.scss that includes fonts
+
+@mixin fontFace($font-name, $font-file, $font-weight: 400) {
+  @font-face {
+      font-family: '#{$font-name}';
+      font-weight: $font-weight;
+      src: url('./fonts/#{$font-file}.woff') format('woff')
+  }
+}
+
+@include fontFace('circular-book', 'circularBook', 400);
+@include fontFace('circular-book-medium', 'circularMedium', 600);
+@include fontFace('circular-book-bold', 'circularBold', 700);
+@include fontFace('circular-book-italic', 'circularBookItalic');

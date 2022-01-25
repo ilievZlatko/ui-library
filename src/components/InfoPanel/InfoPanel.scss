@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.lp-info-panel {
+  @include dropdownShadow();
+  @include textBold();
+  display: flex;
+  align-items: center;
+  font-family: $font-family-circular-book;
+  padding: $spacing-small;
+  border-radius: $radius-regular;
+  background-color: $color-white;
+  border: 1px solid transparent;
+  border-left-width: 4px;
+  border-style: solid;
+
+  &.inline {
+    box-shadow: none;
+  }
+
+  &.success {
+    border-left-color: $color-green;
+    &.emphasize {
+      border-color: $color-green;
+    }
+
+    .lp-info-panel-icon {
+      background-color: $color-green;
+    }
+  }
+
+  &.warning {
+    border-left-color: $color-yellow;
+    &.emphasize {
+      border-color: $color-yellow;
+    }
+
+    .lp-info-panel-icon {
+      background-color: $color-yellow;
+    }
+  }
+
+  &.danger {
+    border-left-color: $color-red;
+    &.emphasize {
+      border-color: $color-red;
+    }
+
+    .lp-info-panel-icon {
+      background-color: $color-red;
+    }
+  }
+
+  &.info {
+    border-left-color: $color-primary;
+    &.emphasize {
+      border-color: $color-primary;
+    }
+
+    .lp-info-panel-icon {
+      background-color: $color-primary;
+    }
+  }
+
+  .lp-info-panel-icon {
+    margin: $spacing-regular $spacing-regular $spacing-regular $spacing-regular;
+    border-radius: 50%;
+    color: $color-white;
+    cursor: default;
+    flex-shrink: 0;
+    align-self: start;
+  }
+
+  .lp-info-panel-message {
+    padding: $spacing-regular - 1 $spacing-regular $spacing-regular - 1 0; // -1 to compensate for border.
+    margin: 0;
+    flex: 1;
+  }
+}

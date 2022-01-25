@@ -1,0 +1,79 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .label {
+    color: $color-dark70;
+    margin-right: $spacing-regular;
+    @include textRegular();
+  }
+
+  .track {
+    width: 32px;
+    height: 16px;
+    border: 1px solid $color-dark30;
+    border-radius: $radius-medium;
+    @include transitionAppearance(border-color);
+  }
+
+  .dot {
+    background-color: $color-dark30;
+    height: 10px;
+    width: 10px;
+    border-radius: $radius-medium;
+    margin-top: 2px;
+    margin-left: 3px;
+    @include transitionAppearance(margin-left, background-color);
+  }
+
+  &.active {
+    .label {
+      color: $color-primary;
+    }
+
+    .track {
+      border-color: $color-primary;
+    }
+
+    .dot {
+      margin-left: 18px;
+      background-color: $color-primary;
+    }
+
+    &:hover:not(.disabled), &:focus:not(.disabled) {
+      .label {
+        color: $color-primary-hover;
+      }
+
+      .track {
+        border-color: $color-primary-hover;
+      }
+
+      .dot {
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+
+  &:hover:not(.disabled), &:focus:not(.disabled) {
+    .label {
+      color: $color-dark90;
+    }
+
+    .track {
+      border-color: shade($color-dark30, 25%);
+    }
+
+    .dot {
+      background-color: shade($color-dark30, 25%);
+    }
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

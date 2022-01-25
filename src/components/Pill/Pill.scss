@@ -1,0 +1,106 @@
+@import '../../styles/variables.scss';
+
+.lp-pill {
+  border-radius: $radius-regular;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  outline: none;
+  
+  &:not(.disabled) {
+    &:hover, &:focus-within {
+      .label {
+        color: $color-dark90;
+        background-color: $color-light10;
+      }
+    }
+  }
+
+  &.error .icon:not(:hover) + .label {
+    border: 1px solid $color-red;
+  }
+
+  &.warning:not(.error) .icon:not(:hover) + .label {
+    border: 1px solid $color-yellow;
+  }
+
+  &.selected {
+    .label {
+      background-color: $color-light10;
+    }
+  }
+
+  &.disabled {
+    .label {
+      cursor: default;
+      color: $color-dark30;
+    }
+  }
+
+  &.placeholder {
+    .label {
+      color: $color-dark30;
+    }
+  }
+
+  &.with-close:not(.disabled):hover {
+    .icon {
+      opacity: 1;
+      pointer-events: all;
+
+      &:hover + .label {
+        border: 1px dashed $color-red;
+      }
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: -$spacing-small;
+    right: -$spacing-small;
+    opacity: 0;
+    pointer-events: none;
+    height: $spacing-regular;
+    width: $spacing-regular;
+    color: $color-dark30;
+
+    @include transitionVisibility(opacity);
+  }
+
+  .label {
+    @include transitionAppearance(color, background-color);
+    cursor: pointer;
+    background-color: $color-light02;
+    border: 1px solid transparent;
+    border-radius: $radius-regular;
+    padding: 0 $spacing-medium;
+    color: $color-dark70;
+    font-size: $font-regular;
+    max-width: 240px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    height: $size-item-regular;
+    line-height: $size-item-medium;
+
+    .label-content {
+      @include ellipsis();
+      word-break: break-word;
+    }
+
+    .lp-pill-overflowable-text {
+      width: 100%;
+    }
+  }
+}
+
+.lp-pill-popup-name {
+  word-break: break-word;
+}
+
+.lp-pill-popup-separator {
+  width: calc(100% + #{2 * $spacing-medium});
+  border-bottom: 1px solid $color-white;
+  margin: $spacing-regular -1 * $spacing-medium;
+}

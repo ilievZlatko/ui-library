@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.lp-link {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: normal;
+
+  font-family: $font-family-circular-bold;
+  font-size: $font-regular;
+  font-style: normal;
+  font-weight: 400;
+
+  border-radius: $radius-regular;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: $color-primary;
+
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: normal;
+
+  @include transitionAppearance(color);
+
+  &:hover {
+    color: $blue-dark;
+  }
+}

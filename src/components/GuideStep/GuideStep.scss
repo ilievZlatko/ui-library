@@ -1,0 +1,60 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.lp-setup-guide-step {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+
+  & + .lp-setup-guide-step {
+    margin-top: $spacing-small;
+  }
+
+  &:not(:last-of-type) {
+    .step-thumbnail .step-line {
+      height: 100%;
+      margin-top: $spacing-small;
+    }
+  }
+
+  .step-thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-right: $spacing-large;
+
+    .step-icon {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-medium;
+      background-color: $color-light02;
+      color: $color-dark90;
+      @include textBold();
+    }
+
+    .step-line {
+      height: 0;
+      width: 1px;
+      border-left: 1px solid $color-light10;
+    }
+  }
+
+  .step-content {
+    width: 100%;
+
+    .step-title {
+      height: 36px;
+      color: $color-dark90;
+      margin-bottom: $spacing-large;
+    }
+
+    .step-slot {
+      padding-bottom: $spacing-xxxlarge;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import '../../styles/variables';
+
+.lp-badge {
+  @include textTitleUppercase();
+
+  display: inline-block;
+  min-width: 16px;
+  padding: 0 $spacing-small;
+  color: $color-white;
+  border-radius: $radius-regular;
+  height: 16px;
+  letter-spacing: 0.5px;
+  text-align: center;
+
+  &.primary {
+    background-color: $color-primary;
+  }
+
+  &.primary-light {
+    color: $color-primary;
+    background-color: rgba($color-primary, 0.1);
+  }
+
+  &.grey {
+    background-color: $color-dark30;
+    color: $color-white;
+  }
+
+  &.grey-light {
+    background-color: $color-light10;
+    color: $color-dark30;
+  }
+
+  &.green {
+    background-color: $color-green;
+  }
+
+  &.green-light {
+    color: $color-green;
+    background-color: rgba($color-green, 0.1);
+  }
+
+  &.black {
+    background-color: $color-dark90;
+  }
+
+  &.black-light {
+    color: $color-dark90;
+    background-color: rgba($color-dark90, 0.1);
+  }
+
+  &.red {
+    background-color: $color-red;
+  }
+
+  &.red-light {
+    color: $color-red;
+    background-color: rgba($color-red, 0.1);
+  }
+
+  &.plum {
+    background-color: $color-com04;
+  }
+
+  &.plum-light {
+    color: $color-com04;
+    background-color: rgba($color-com04, 0.1);
+  }
+
+  &.orange {
+    background-color: $color-orange;
+  }
+
+  &.orange-light {
+    color: $color-orange;
+    background-color: rgba($color-orange, 0.1);
+  }
+
+  &.cyan {
+    background-color: $series-color-com02;
+    color: $color-white;
+  }
+
+  &.cyan-light {
+    color: $series-color-com02;
+    background-color: rgba($series-color-com02, 0.1);
+  }
+
+  &.yellow {
+    background-color: $color-yellow;
+  }
+
+  &.yellow-light {
+    color: $color-yellow;
+    background-color: rgba($color-yellow, 0.1);
+  }
+}

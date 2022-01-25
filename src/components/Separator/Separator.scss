@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.lp-separator {
+  .separator-line {
+    background-color: $color-light10;
+    width: 1px;
+    height: 100%;
+  }
+}

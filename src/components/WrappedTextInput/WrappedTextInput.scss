@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.lp-wrapped-text-input {
+  cursor: text;
+
+  .lp-wrapped-text-input-field {
+    flex: 1;
+    border: none;
+    padding: 0;
+    color: inherit;
+    -webkit-text-fill-color: inherit;
+    font: inherit;
+    line-height: $font-regular-line-height;
+    height: $font-regular-line-height;
+    background-color: transparent;
+    outline: 0;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      opacity: 1;
+      color: $color-dark30;
+    }
+  }
+}

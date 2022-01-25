@@ -1,0 +1,156 @@
+.icons-wrapper{
+    h6 {
+        font-size: 14px;
+    }
+
+    .icon-list {
+        display: inline-flex;
+        flex-flow: row wrap;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #B2B7B9;
+
+        li {
+            text-align: center;
+            width: 220px;
+            min-height: 120px;
+            border: 1px solid #E1E4E5;
+            margin: -1px 0 0 -1px;
+        }
+
+        i {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 20px auto;
+            color: #B2B7B9;
+            svg {
+                width: 100%;
+            }
+        }
+    }
+
+    /* Icon structure */
+    .icon-layout {
+        width: 120px;
+        height: 120px;
+        background-color: #fff;
+        border: 12px solid rgba(255,0,0,.1);
+        position: relative;
+        line-height: 96px;
+        text-align: center;
+        font-size: 32px;
+        color: #B2B7B9;
+
+        &:before {
+            position: absolute;
+            content: "20px";
+            top: -12px;
+            right: -60px;
+            bottom: -12px;
+            line-height: 120px;
+            padding-left: 4px;
+            color: blue;
+            font-size: 12px;
+            border-left: 1px dotted blue;
+        }
+
+        &:after {
+            position: absolute;
+            content: "2px";
+            top: -54px;
+            left: 46px;
+            color: red;
+            font-size: 10px;
+        }
+
+        .icon-preview {
+            position: absolute;
+            top: 0;
+            width: 96px;
+            height: 96px;
+            border-radius: 100%;
+            border: 3px solid #B2B7B9;
+        }
+    }
+
+    /* Bold Icons */
+    .bold path {
+        stroke: currentColor;
+        stroke-width: 0.8;
+    }
+
+    /* Circle icons with solid background */
+    .circle {
+        border-radius: 16px;
+
+        path {
+            fill: white;
+            stroke: white;
+            stroke-width: 0;
+        }
+
+        &.bold {
+            path {
+                stroke-width: 0.8;
+            }
+        }
+
+        &.error {
+            background-color: red;
+        }
+
+        &.warning {
+            background-color: orange;
+        }
+
+        &.dark {
+            background-color: #000000;
+        }
+    }
+
+    /* Migration table styles */
+    &.migration {
+        table {
+            border: 1px solid #E1E4E5;
+            border-collapse: collapse;
+            text-align: left;
+            width: auto;
+
+            td {
+                width: 500px;
+                border: 1px solid #E1E4E5;
+                padding: 20px;
+                line-height: 20px;
+                vertical-align: middle;
+            }
+            th {
+                padding: 10px 20px;
+                background-color: #E1E4E5;
+            }
+        }
+
+        i {
+            display: inline-block;
+            margin: 0 20px 0 0;
+            vertical-align: middle;
+            max-width: 60px;
+        }
+
+        .new-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .small {
+            width: 20px;
+            height: 20px;
+        }
+
+        .large svg {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}

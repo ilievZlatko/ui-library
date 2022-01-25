@@ -1,0 +1,87 @@
+@import '../../styles/variables.scss';
+
+.lp-button-group {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-light02;
+  border-radius: $radius-regular;
+  @include transitionAppearance(background-color, box-shadow, color);
+
+  &.disabled {
+    .button-group-button {
+      cursor: default;
+      color: $color-dark30;
+    }
+  }
+
+  &:not(.disabled) {
+    .button-group-button {
+      &:hover {
+        color: $color-dark90;
+
+        &.compact {
+          background-color: $color-light10;
+        }
+      }
+
+      &.selected {
+        color: $color-dark90;
+      }
+    }
+  }
+
+  .button-group-button {
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: $spacing-regular - $spacing-xsmall $spacing-large;
+    margin: $spacing-xsmall;
+    border-radius: $radius-small;
+    color: $color-dark70;
+    @include transitionAppearance(background-color, box-shadow, color);
+    user-select: none;
+    white-space: nowrap;
+
+    &.icon-only {
+      padding: $spacing-regular - $spacing-xsmall;
+
+      .button-icon {
+        margin: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+
+    &.selected {
+      cursor: default;
+      background-color: $color-white;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .button-icon {
+      margin: 0 $spacing-regular 0 0;
+    }
+  }
+
+  &:not(.compact) {
+    .button-icon {
+      margin: 0 0 $spacing-small 0;
+    }
+
+    .button-group-button {
+      flex-flow: column;
+      justify-content: center;
+      padding: $spacing-large $spacing-large;
+      margin: $spacing-small;
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+}

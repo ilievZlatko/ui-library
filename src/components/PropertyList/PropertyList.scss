@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.lp-property-list {
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.lp-property-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.single-column {
+    flex-direction: column;
+
+    > * {
+      margin-top: 0;
+      width: 100%;
+    }
+
+    > .lp-property-list-label {
+      margin-top: $spacing-regular;
+    }
+  }
+
+  > * {
+    margin-top: $spacing-regular;
+    width: 50%;
+  }
+
+  > a {
+    color: $color-primary;
+  }
+}
+
+.lp-property-list-header {
+  @include textTitleUppercase();
+  color: $color-primary;
+  max-width: 150px;
+}
+
+.lp-property-list-label {
+  color: $color-dark30;
+}

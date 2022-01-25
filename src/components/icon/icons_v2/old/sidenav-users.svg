@@ -1,0 +1,14 @@
+<svg viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800000012">
+        <g id="nav-03" class="fillable" transform="translate(-25.000000, -225.000000)" fill-rule="nonzero" fill="currentColor">
+            <g id="icon-users" transform="translate(24.000000, 224.000000)">
+                <g id="Group-4" transform="translate(1.000000, 1.000000)">
+                    <path d="M4.5,1.5 L4.5,20.5 L20.5,20.5 L20.5,1.5 L4.5,1.5 Z M4.5,0 L20.5,0 C21.3284271,6.98650109e-17 22,0.671572875 22,1.5 L22,20.5 C22,21.3284271 21.3284271,22 20.5,22 L4.5,22 C3.67157288,22 3,21.3284271 3,20.5 L3,1.5 C3,0.671572875 3.67157288,3.74224199e-16 4.5,0 Z M0,1 L1.5,1 L1.5,21 L0,21 L0,1 Z M12.5,10 C13.6045695,10 14.5,9.1045695 14.5,8 C14.5,6.8954305 13.6045695,6 12.5,6 C11.3954305,6 10.5,6.8954305 10.5,8 C10.5,9.1045695 11.3954305,10 12.5,10 Z M16.5,13.8284271 C16.5,12.26633 14.709139,11 12.5,11 C10.290861,11 8.5,12.26633 8.5,13.8284271 C8.5,15.3905243 16.5,15.3905243 16.5,13.8284271 Z" id="Rectangle-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

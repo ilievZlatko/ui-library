@@ -1,0 +1,6 @@
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+    <g transform='translate(2 2)' fill="currentColor" fill-rule="evenodd">
+        <circle fill-opacity=".3" cx="8" cy="8" r="8"/>
+        <circle cx="8" cy="8" r="4"/>
+    </g>
+</svg>

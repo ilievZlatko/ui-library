@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Action---Email---Preview-Tablet---Sent-Copy" transform="translate(-584.000000, -447.000000)" fill="#000000">
+            <g id="Group-9" transform="translate(54.000000, 56.000000)">
+                <g id="Left-Box">
+                    <g id="Group-18" transform="translate(28.000000, 348.000000)">
+                        <g id="Button-Copy-3" transform="translate(486.000000, 29.000000)">
+                            <path d="M30,22.6153846 L28,19.3846154 L29.267,19.3846154 C28.611,16.9044615 26.514,15.0769231 24,15.0769231 C22.3,15.0769231 20.799,15.9255385 19.789,17.2307692 L18.537,17.2307692 C19.693,15.2923077 21.701,14 24,14 C27.07,14 29.629,16.3013846 30.309,19.3846154 L32,19.3846154 L30,22.6153846 L30,22.6153846 Z M18.732,22.6153846 C19.388,25.0955385 21.485,26.9230769 24,26.9230769 C25.7,26.9230769 27.201,26.0744615 28.21,24.7692308 L29.463,24.7692308 C28.307,26.7076923 26.298,28 24,28 C20.928,28 18.37,25.6986154 17.69,22.6153846 L16,22.6153846 L18,19.3846154 L20,22.6153846 L18.732,22.6153846 L18.732,22.6153846 Z" fill="currentColor"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

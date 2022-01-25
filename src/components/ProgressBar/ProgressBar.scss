@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.lp-progress-bar {
+  display: flex;
+  align-items: center;
+
+  .progress-label {
+    @include textBold();
+    color: $color-blue;
+    margin-right: $spacing-regular;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .progress-container {
+    width: 100%;
+    height: $spacing-regular;
+    background-color: transparentize($color-light10, 0.3);
+    border-radius: $radius-regular;
+    overflow: hidden;
+
+    .progress-content {
+      background-color: $color-blue;
+      border-radius: $radius-regular;
+      height: 100%;
+      @include transitionAppearance(transform);
+      transform: translateX(-100%);
+
+      &.secondary {
+        background-color: $color-red;
+      }
+    }
+
+    .secondary+.primary {
+      margin-top: -1 * $spacing-regular;
+    }
+  }
+
+}

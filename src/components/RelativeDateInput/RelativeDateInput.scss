@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.lp-relative-time-input {
+  display: flex;
+
+  .lp-text-input-wrapper {
+    margin-right: $spacing-regular;
+    width: 80px;
+  }
+
+  .lp-relative-time-input-direction {
+    margin-left: $spacing-regular;
+  }
+}

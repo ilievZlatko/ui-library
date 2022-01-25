@@ -1,0 +1,25 @@
+@import '~leanplum-lib-ui/src/styles/variables';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  .lp-icon {
+    margin: 0 $spacing-small;
+    color: $color-dark30;
+  }
+
+  .item {
+    cursor: pointer;
+    color: $color-dark70;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  .item-last {
+    color: $color-dark70;
+    @include textBold();
+  }
+}

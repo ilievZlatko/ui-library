@@ -1,0 +1,39 @@
+@import '../../../styles/variables';
+
+.lp-incremental-input {
+  margin: 8px;
+
+  .lp-incremental-input-button {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-regular;
+    display: flex;
+    align-items: center;
+    @include transitionAppearance(color, background-color);
+
+    .lp-icon.chevron {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &:hover {
+      color: $color-dark90;
+      background-color: $color-light10;
+    }
+
+    &:active {
+      background-color: $color-light10;
+    }
+  }
+
+  .lp-text-input-wrapper {
+    width: 36px;
+    height: 36px;
+    padding: 8px 6px;
+
+    input {
+      text-align: center;
+    }
+  }
+}

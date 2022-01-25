@@ -1,0 +1,122 @@
+@import '../../styles/variables';
+
+.lp-daterangepicker {
+  .lp-daterangepicker-anchor {
+    input {
+      cursor: pointer;
+    }
+
+    > *:focus-within {
+      border-color: $color-light10;
+      background-color: $color-light10;
+      color: $color-dark90;
+
+      .lp-icon {
+        color: $color-dark90;
+      }
+    }
+  }
+}
+
+.lp-daterangepicker-input {
+  &.lp-readonly.outline,
+  &.readonly.outline {
+    background-color: $color-light02;
+    border-color: $color-light10;
+    box-shadow: none;
+    color: $color-dark70;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: $color-light10 !important;
+      color: $color-dark90 !important;
+    }
+
+    &.active,
+    &:active {
+      background-color: $color-dark30 !important;
+      border-color: $color-dark30 !important;
+      color: $color-dark90 !important;
+
+      .lp-legend-wrapper-label {
+        color: $color-dark30 !important;
+      }
+    }
+
+    &.disabled,
+    &.lp-disabled {
+      background-color: $color-light02 !important;
+      border-color: $color-light10 !important;
+      color: $color-dark30 !important;
+      cursor: default;
+
+      .lp-icon {
+        color: inherit !important;
+      }
+    }
+
+    .lp-text-input {
+      background: transparent !important;
+
+      &::placeholder {
+        color: $gray-dark;
+      }
+    }
+  }
+}
+
+.lp-daterangepicker-dropdown {
+  @include dropdownShadow();
+  display: flex;
+  flex-flow: column nowrap;
+  background: $color-white;
+  background-color: $color-white;
+  border-radius: $radius-regular;
+
+   .row {
+     display: flex;
+   }
+ }
+
+ .lp-daterangepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: $spacing-xxxlarge 0 $spacing-xxlarge;
+  margin: 0 $spacing-xxxlarge;
+  border-bottom: 1px solid $color-light10;
+
+  .lp-text-input-wrapper:first-child {
+    margin-right: $spacing-regular;
+    margin-left: $spacing-large;
+  }
+
+  .lp-text-input-wrapper:last-child {
+    margin-left: $spacing-regular;
+  }
+}
+
+.lp-daterangepicker-calendars {
+  display: flex;
+  margin: $spacing-xxlarge $spacing-xxxlarge;
+
+  > .lp-calendar {
+    padding: 0;
+
+    &:last-child {
+      margin-left: $spacing-xxxlarge;
+    }
+  }
+}
+
+.lp-daterangepicker-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 $spacing-xxxlarge $spacing-xxxlarge;
+
+  .lp-button:not(:last-child) {
+    margin-right: $spacing-medium;
+  }
+}

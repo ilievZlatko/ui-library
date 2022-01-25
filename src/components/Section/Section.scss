@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.lp-section {
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border-radius: $radius-regular;
+  @include dropdownShadow();
+  @include textRegular();
+  color: $color-dark90;
+  position: relative;
+
+  &.highlighted {
+    border: 1px solid $color-blue;
+    box-shadow: 2px 6px 12px 0px rgba(16, 119, 251, 0.12);
+  }
+
+  &.inline {
+    box-shadow: none;
+    border-radius: 0;
+
+    .header {
+      margin: 0 $spacing-xxlarge;
+    }
+  }
+
+  &.loading {
+    .content {
+      min-height: 56px;
+      height: 100%;
+      margin: 24px;
+
+      @include loading(true, true, border-box);
+    }
+  }
+
+  &.warn {
+    @include dropdownShadow($extra: 0 0 0 1px $color-yellow);
+  }
+
+  &.error {
+    @include dropdownShadow($extra: 0 0 0 1px $color-red);
+  }
+
+  > .content {
+    overflow-y: auto;
+  }
+}

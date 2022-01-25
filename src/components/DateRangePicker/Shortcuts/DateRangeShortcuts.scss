@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+
+$duration: .2s;
+
+.lp-daterangepicker-dropdown .shortcuts {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 $spacing-xxxlarge;
+  margin: $spacing-xxxlarge 0;
+  border-right: 1px solid $color-light10;
+
+  h4 {
+    @include textExplanatory();
+    text-align: center;
+    color: $color-dark30;
+    margin-bottom: 0;
+    line-height: $font-xxlarge-line-height;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-size: $font-regular;
+    line-height: $font-xxlarge-line-height;
+    list-style: none;
+    text-align: center;
+    color: $color-dark70;
+    cursor: pointer;
+    @include transitionAppearance(color);
+
+    &:hover {
+      color: $color-dark90;
+    }
+  }
+}

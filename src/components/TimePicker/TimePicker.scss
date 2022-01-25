@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.lp-time-picker-popup {
+  background-color: $color-white;
+  border-radius: $radius-regular;
+  @include dropdownShadow();
+  user-select: none;
+  overflow: hidden;
+  width: fit-content;
+  padding: $spacing-large;
+  border: 1px solid $color-light10;
+}
+
+.lp-time-picker-input {
+  width: 124px;
+
+  i {
+    flex-shrink: 0;
+  }
+}

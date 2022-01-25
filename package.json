@@ -1,0 +1,11 @@
+{
+  "name": "leanplum-lib-ui",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "./src/index.ts",
+  "dependencies": {
+    "leanplum-lib-common": "1.0.0",
+    "leanplum-lib-testing": "1.0.0"
+  }
+}

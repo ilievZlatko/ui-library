@@ -1,0 +1,5 @@
+<svg width="16" height="16" viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M13 2v.5c0 .3-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V2H6v.5c0 .3-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V2H1v2h14V2h-2zm0-1h2c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H1c-.6 0-1-.4-1-1V2c0-.6.4-1 1-1h2V.5c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5V1h4V.5c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5V1zM1 5v9h14V5H1zm3-3h1V1H4v1zm7 0h1V1h-1v1zm1.5 10h-2c-.3 0-.5-.2-.5-.5v-2c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5v2c0 .3-.2.5-.5.5zM11 11h1v-1h-1v1z" fill="currentColor"/>
+</svg>

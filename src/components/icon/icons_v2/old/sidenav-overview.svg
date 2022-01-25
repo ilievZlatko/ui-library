@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nav-03" class="fillable" transform="translate(-24.000000, -97.000000)" fill-rule="nonzero" fill="currentColor">
+            <g id="icon-campaigns" transform="translate(24.000000, 96.000000)">
+                <path d="M1.5,2.5 L1.5,21 L22.5,21 L22.5,2.5 L1.5,2.5 Z M1.5,1 L22.5,1 C23.3284271,1 24,1.67157288 24,2.5 L24,21 C24,21.8284271 23.3284271,22.5 22.5,22.5 L1.5,22.5 C0.671572875,22.5 0,21.8284271 0,21 L0,2.5 C0,1.67157288 0.671572875,1 1.5,1 Z M6,7 L6,8.5 L8,8.5 L8,7 L6,7 Z M10,7 L10,8.5 L18,8.5 L18,7 L10,7 Z M6,11 L6,12.5 L8,12.5 L8,11 L6,11 Z M10,11 L10,12.5 L18,12.5 L18,11 L10,11 Z M6,15 L6,16.5 L8,16.5 L8,15 L6,15 Z M10,15 L10,16.5 L18,16.5 L18,15 L10,15 Z" id="Rectangle-21"></path>
+            </g>
+        </g>
+    </g>
+</svg>

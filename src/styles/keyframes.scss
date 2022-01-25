@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    box-shadow: none;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px transparentize($blue, 0.75);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
